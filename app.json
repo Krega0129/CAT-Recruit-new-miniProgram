@@ -1,0 +1,39 @@
+{
+  "pages": [
+    "pages/home/home",
+    "pages/sign/sign",
+    "pages/profile/profile"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#7dc5eb",
+    "navigationBarTitleText": "C A T",
+    "navigationBarTextStyle": "white"
+  },
+  "tabBar": {
+    "color": "#7dc5eb",
+    "selectedColor": "#7dc5eb",
+    "list": [
+      {
+        "pagePath": "pages/home/home",
+        "text": "首页",
+        "iconPath": "/assets/img/tabbar/home.png",
+        "selectedIconPath": "/assets/img/tabbar/home-active.png"
+      },
+      {
+        "pagePath": "pages/sign/sign",
+        "text": "报名",
+        "iconPath": "/assets/img/tabbar/sign.png",
+        "selectedIconPath": "/assets/img/tabbar/sign-active.png"
+      },
+      {
+        "pagePath": "pages/profile/profile",
+        "text": "我的",
+        "iconPath": "/assets/img/tabbar/profile.png",
+        "selectedIconPath": "/assets/img/tabbar/profile-active.png"
+      }
+    ]
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}
