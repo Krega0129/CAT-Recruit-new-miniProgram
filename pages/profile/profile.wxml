@@ -1,2 +1,73 @@
 <!--pages/profile/profile.wxml-->
-<text>pages/profile/profile.wxml</text>
+<view class="bg pos-fix round"></view>
+
+<view class="container">
+  <view class="avatar cu-avatar round" style="width: 160rpx; height: 160rpx; background-image:url('../../assets/img/head.jpg');"></view>
+  <view class="text-white text-xxl margin-top">Krega，下午好！</view>
+  <view class="text-white text-lg margin-tb">2021/01/27 周三 晴 </view>
+  
+  <view class="card flex bg-white padding-lr-lg padding-tb" bindtap="showModal" data-target="Modal">
+    <view class="flex-sub text-cut">
+      <view class="title text-lg text-bold">通知</view>
+      <view class="margin-top text-cut">恭喜你，通过了我们的笔试，现在可以预约一轮面试啦，希望你接下来再接再厉，期待你的精彩表现！</view>
+    </view>
+    <view class="icon text-right">
+      <text class="cuIcon-notice pos-re">
+        <text class="tag cu-tag badge text-lg padding dp-in-bk text-center" style="height: 36rpx; width: 36rpx; line-height: 36rpx" wx:if="{{unReadNoticeNum}}">{{unReadNoticeNum}}</text>
+      </text>
+    </view>
+  </view>
+
+  <view class="btns flex justify-between flex-wrap padding-top" style="height: {{flagBottom - cardBottom }}px">
+    <view class="btn bg-white padding" wx:for="{{btns}}" wx:key="index" data-route="{{item.route}}" bindtap="navigate">
+      <view class="action {{action ? 'flex' : ''}}">
+        <view class="btnIcon cuIcon-{{item.icon}} text-bold text-xxl {{action ? '' : 'margin-bottom-sm'}} margin-right"></view>
+        <view class="btnTitle text-lg text-bold">{{item.title}}</view>
+      </view>
+      <view class="btnContent text-cut margin-top-xs text-gray">{{item.content}}</view>
+    </view>
+  </view>
+    
+</view>
+
+<view class="cu-modal {{modalName=='Modal'?'show':''}}">
+  <view class="cu-dialog">
+    <view class="cu-bar bg-white justify-end">
+      <view class="content">通知</view>
+      <view class="action" bindtap="hideModal">
+        <text class="cuIcon-close text-red"></text>
+      </view>
+    </view>
+    <view class="solids-top">
+      <view class="cu-list menu">
+        <view class="cu-item" wx:for="{{notice}}" wx:key="index" bindtap="showModal" data-target="notice" data-notice="{{item.content}}">
+          <view class="content text-cut">
+            <text class="cuIcon-{{item.isRead ? 'read' : 'mail'}} text-grey pos-re">
+              <text wx:if="{{!item.isRead}}" class="cu-tag badge dp-in-bk" style="height: 20rpx; width: 20rpx; right: 0; top: 0; line-height: 20rpx"></text>
+            </text>
+            <text class="text-grey">{{item.content}}</text>
+          </view>
+          <view class="text-{{item.isRead ? 'green' : 'orange'}}">[{{item.isRead ? '已读' : '未读'}}]</view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+
+<view class="cu-modal {{modalName=='notice'?'show':''}}">
+  <view class="cu-dialog">
+    <view class="cu-bar bg-white justify-end">
+      <view class="content">通知</view>
+      <view class="action" bindtap="hideModal">
+        <text class="cuIcon-close text-red"></text>
+      </view>
+    </view>
+    <view class="solids-top padding-lg text-left" style="text-indent: 2em">
+      {{noticeContent}}
+    </view>
+  </view>
+</view>
+
+<!-- 充当一个参考点，计算距离底部的距离 -->
+<view class="pos-fix flag" style="bottom: 0"></view>
+

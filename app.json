@@ -2,17 +2,21 @@
   "pages": [
     "pages/home/home",
     "pages/sign/sign",
-    "pages/profile/profile"
+    "pages/profile/profile",
+    "pages/progress/progress",
+    "pages/reservation/reservation",
+    "pages/group/group",
+    "pages/more/more"
   ],
   "window": {
     "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#7dc5eb",
+    "navigationBarBackgroundColor": "#74a594",
     "navigationBarTitleText": "C A T",
     "navigationBarTextStyle": "white"
   },
   "tabBar": {
-    "color": "#7dc5eb",
-    "selectedColor": "#7dc5eb",
+    "color": "#74a594",
+    "selectedColor": "#74a594",
     "list": [
       {
         "pagePath": "pages/home/home",

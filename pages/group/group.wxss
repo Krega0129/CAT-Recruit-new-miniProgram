@@ -1,0 +1,46 @@
+/* pages/group/group.wxss */
+.btn {
+  width: 300rpx; 
+  height: 60rpx; 
+  line-height: 60rpx; 
+  top: 80rpx; 
+  left: 50%;
+  transform: translate(-50%, 0);
+  box-sizing: content-box; 
+  border: 1px solid #74a594
+}
+
+.weChat {
+  top: 0; 
+  left: 0;
+  height: 60rpx; 
+  width: 150rpx; 
+  z-index: 2;
+}
+
+.qq {
+  top: 0; 
+  right: 0;
+  height: 60rpx; 
+  width: 150rpx; 
+  z-index: 2;
+}
+
+.weChatBg {
+  height: 60rpx; 
+  width: 160rpx; 
+  transition: .2s;
+}
+
+.qrcode {
+  width: 500rpx;
+  height: 500rpx;
+  transition: .2s;
+  margin: 200rpx auto 50rpx auto;
+  border: 2rpx solid #74a594;
+  transform-style: preserve-3d;
+}
+
+.qqQRcode {
+  transform: rotateY(180deg);
+}

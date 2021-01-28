@@ -1,0 +1,13 @@
+<!--pages/reservation/reservation.wxml-->
+<view class="margin-sm">
+  <view class="card bg-white padding margin-bottom-sm radius" wx:for="{{reservation}}" wx:key="index">
+    <view class="content flex justify-between text-lg text-bold">
+      <view class="title">预约时间：{{item.time}}</view>
+      <view class="text-orange margin-tb-xs">{{item.direction}}</view>
+    </view>
+    <view class="">预约人数：{{item.num + '/' + item.maxNum}}</view>
+    <button class="cu-btn bg-olive margin-top-lg flex">预约</button>
+  </view>
+</view>
+
+

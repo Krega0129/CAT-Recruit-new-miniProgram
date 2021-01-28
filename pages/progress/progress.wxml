@@ -1,0 +1,25 @@
+<!--pages/progress/progress.wxml-->
+<view class="bg cu-timeline">
+  <view class="cu-time">1-25</view>
+  <view class="cu-item cur cuIcon-check text-green">
+    <view class="content bg-green shadow-blur">
+      恭喜你通过笔试！
+    </view>
+  </view>
+  <view class="cu-item text-green cuIcon-check">
+    <view class="content bg-green shadow-blur">
+      恭喜你通过一轮面试
+    </view>
+  </view>
+  <view class="cu-time">今天</view>
+  <view class="cu-item text-red cuIcon-close">
+    <view class="content bg-red shadow-blur">
+      很遗憾，你没有通过二轮面试。
+    </view>
+  </view>
+  <view class="cu-item text-gray">
+    <view class="content bg-gray shadow-blur">
+      一轮考核结果（结果未出）
+    </view>
+  </view>
+</view>

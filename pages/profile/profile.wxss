@@ -1,1 +1,37 @@
 /* pages/profile/profile.wxss */
+.bg {
+  z-index: -1;
+  width: 2000rpx; 
+  height: 2000rpx; 
+  left: 50%; 
+  background: #74a594;
+  transform: translate(-50%, -73%);
+}
+
+.container {
+  padding: 60rpx 80rpx 0 80rpx;
+}
+
+.card {
+  border-radius: 20rpx;
+  box-shadow: 1rpx 4rpx 20rpx #e5e5eb;
+}
+
+.icon {
+  width: 100rpx;
+  line-height: 100rpx;
+  font-size: 56rpx;
+}
+
+.btns {
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.btn {
+  width: 48%;
+  height: 45%;
+  border-radius: 20rpx;
+  box-sizing: border-box;
+  box-shadow: 1rpx 4rpx 20rpx #e5e5eb;
+}

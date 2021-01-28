@@ -1,0 +1,4 @@
+/* pages/progress/progress.wxss */
+.bg {
+  min-height: 100vh;
+}
