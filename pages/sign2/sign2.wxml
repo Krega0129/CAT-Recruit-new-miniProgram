@@ -1,0 +1,71 @@
+<cu-custom bgColor="bg-gradual-purple"></cu-custom>
+<view class="container bg-normal flex flex-direction align-center justify-end" style="width:100vw;height:89vh;">
+  <view class="form form-normal">
+    <view class="direction flex justify-around flex-direction align-center" style="{{currentIndex == 0?'':'display:none'}}">
+      <view class="directionIcon fontend-normal" catchtap="click_fontend">
+        <view class="fontendText fontendText-normal">JS</view>
+      </view>
+      <view class="selectTipText">请选择一个方向</view>
+      <view class="directionIcon backend-normal">
+        <view class="backendText backendText-normal">
+          <image src="../../assets/img/java/java.png"></image>
+        </view>
+      </view>
+    </view>
+    <view class="profile flex flex-direction justify-around align-center"
+      style="{{currentIndex == 1?'':'display:none;'}} color:#31344b;">
+      <view class="flex justify-around align-center haveDir">
+        <view>你选择的方向:</view>
+        <view class="dir text-center">JS</view>
+      </view>
+      <view class="getProfile flex flex-direction align-center justify-end">
+          <input type="text" placeholder="姓名"></input>
+          <input type="text" placeholder="学号"></input>
+          <input type="text" placeholder="专业/班级"></input>
+      </view>
+      <view class="flex justify-end align-center controller">
+        <view class="justify-center align-center flex">
+          <view class="cuIcon-right"></view>
+        </view>
+      </view>
+    </view>
+    <view style="{{currentIndex == 2?'width: 100vw;height: 100%;':'display:none'}}"  class="flex justify-center align-center">
+      <view class="color flex">
+        <view class="color-shadow"></view>
+        <view class="bg-cyan" style="border-radius:30rpx 0 0 0"></view>
+        <view class="bg-pink"  style="border-radius:0 0 0 0"></view>
+        <view class="bg-orange" style="border-radius:0 30rpx 0 0"></view>
+        <view class="bg-olive"></view>
+        <view class="bg-olive"></view>
+        <view class="bg-red"></view>
+        <view class="bg-purple" style="border-radius:0 0 0 30rpx"></view>
+        <view class="bg-blue" style="border-radius:0 0 0 0"></view>
+        <view class="bg-yellow" style="border-radius:0 0 30rpx 0"></view>
+        <view class="introduce bg-gray">
+          <view>请介绍一下你自己(如目前学到的知识,兴趣爱好,其他的一些技术设计,剪辑,PPT等皆可)</view>
+          <textarea name="" id="" cols="30" rows="10" placeholder="认真填写哦！"></textarea>
+        </view>
+      </view>
+    </view>
+    <view style="{{currentIndex == 3?'':'display:none'}}" class="suc flex justify-center align-center flex-direction">
+      <view class="success flex justify-center align-center">
+        <view class="successIcon flex justify-center align-center"><view class="cuIcon-check"></view> </view>
+      </view>
+      <view class="thank">Thank You!</view>
+    </view>
+  </view>
+  <view class="footer footer-normal flex justify-around align-center">
+    <view data-index="0" catchtap="switch">
+      <view class="iconfont icon-code current"></view>
+    </view>
+    <view data-index="1" catchtap="switch">
+      <view class="cuIcon-profile"></view>
+    </view>
+    <view data-index="2" catchtap="switch">
+      <view class="cuIcon-form"></view>
+    </view>
+    <view data-index="3" catchtap="switch">
+      <view class="cuIcon-check"></view>
+    </view>
+  </view>
+</view>

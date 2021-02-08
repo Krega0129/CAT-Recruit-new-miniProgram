@@ -1,1 +1,302 @@
-/* pages/sign/sign.wxss */
+.bg-signBack {
+  background-color: #f0f0f0;
+}
+.dp-none{
+  display: none;
+}
+.body {
+  z-index: 0;
+  height: 90vh;
+  box-sizing: border-box;
+}
+
+.catText {
+  background: #f0f0f0;
+  display: block;
+  width: 410rpx;
+  height: 280rpx;
+  position: relative;
+  cursor: pointer;
+  z-index: 2;
+  font-size: 160rpx;
+  letter-spacing: 12px;
+  font-weight: 900;
+  color: #ffffff;
+  transform: rotate(-25deg) skew(25deg);
+  text-shadow:
+    1px 1px 1px #ffffff,
+    -1px 1px 0 #eee,
+    -2px 2px 0 #eee,
+    -3px 3px 0 #eee,
+    -4px 4px 0 #eee,
+    -5px 5px 0 #eee,
+    -6px 6px 0 #eee,
+    -7px 7px 0 #eee,
+    -8px 8px 0 #eee,
+    -9px 9px 0 #eee,
+    -10px 10px 10px #00000060;
+}
+
+.catClick {
+  background: #fafafa;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  align-items: center;
+  width: 600rpx;
+  height: 900rpx;
+  border-radius: 20px;
+  animation: btnClick;
+  animation-duration: 3s;
+  animation-timing-function: cubic-bezier(.4, .6, .3, 1, 0.3, 1);
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  transform: none;
+  box-shadow:
+    30rpx 30rpx 20rpx #cccccc,
+    0 0 0 #ffffff,
+    0 0 0 #cccccc inset,
+    4px 4px 10px #ffffff inset;
+}
+
+@keyframes btnClick {
+  10% {
+    width: 700rpx;
+    height: 700rpx;
+    border-radius: 100%;
+    box-shadow:
+      10px 10px 10px #cccccc;
+  }
+
+  45% {
+    width: 120rpx;
+    height: 120rpx;
+    background: #f8f8f8;
+    border-radius: 10rpx;
+    /* 0 0 0 #cccccc,
+    0 0 0 #ffffff,
+    10rpx 10rpx 10rpx #cccccc inset,
+    -10rpx -10rpx 10rpx #ffffff inset; */
+    box-shadow:
+      -10px -10px 10px #FFFFFF70,
+
+      10px 10px 10px #AEAEC020;
+  }
+
+  60% {
+    width: 120rpx;
+    height: 120rpx;
+    background: #f0f0f0;
+    border-radius: 20rpx;
+    box-shadow:
+      10px 10px 10px #cccccc,
+      10px 10px 10px #ffffff,
+      0 0 0 #cccccc inset,
+      0 0 0 #ffffff inset,
+      2px 2px 2px #ffffff inset;
+  }
+
+  70% {
+    width: 200rpx;
+    height: 900rpx;
+    border-radius: 10rpx;
+    background: #f8f8f8;
+    box-shadow:
+      10rpx 10rpx 10rpx #cccccc,
+      10rpx 10rpx 10rpx #ffffff,
+      1px 1px 2px #cccccc inset,
+      0 0 0 #ffffff inset;
+  }
+
+  100% {
+    width: 600rpx;
+    height: 900rpx;
+    background: #f0f0f3;
+    /* 16rpx 16rpx 20rpx #cccccc,
+    -1px -1px  6px #ffffff,
+    -1px -1px 10px #ffffff inset,
+    0px  0px 2px #cccccc inset,
+    2px 2px 2px #ffffff inset; */
+    box-shadow:
+      -10px -10px 30px #FFF,
+      10px 10px 30px #a7a7b650;
+  }
+}
+.catSelect{
+  display: flex;
+  width: 600rpx;
+  height: 900rpx;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+}
+.fontend {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation-name: fontend;
+  animation-delay: 2.1s;
+  animation-duration: .4s;
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards;
+  border-radius: 100%;
+}
+
+@keyframes fontend {
+  0% {
+    
+    width: 150rpx;
+    height: 0;
+    background: #fafafa;
+  }
+
+  100% {
+   
+    width: 300rpx;
+    height: 300rpx;
+    background: #F0F0F3;
+    box-shadow:
+      -10px -10px 30px #FFF,
+
+      10px 10px 30px #AEAEC040;
+  }
+}
+
+.backend {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation-name: fontend;
+  animation-delay: 2.1s;
+  animation-duration: .4s;
+  animation-timing-function: ease-in;
+  animation-fill-mode: forwards;
+  border-radius: 100%;
+}
+
+.fontendText {
+  animation-name: fontendText;
+  animation-delay: 2.2s;
+  animation-duration: .4s;
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards;
+  letter-spacing: normal;
+  color: #000000;
+  font-weight: 2800;
+  font-size: 60rpx;
+  display: inline-block;
+  width: 80rpx;
+  height: 140rpx;
+  line-height: 140rpx;
+  text-align: center;
+  border-radius: 100%;
+  background: rgb(247, 243, 6);
+  text-shadow: none;
+  text-align: center;
+  box-shadow: none;
+  opacity: 0;
+}
+.backendText{
+  animation-name: fontendText;
+  animation-delay: 2.2s;
+  animation-duration: .4s;
+  opacity: 0;
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards;
+  background: rgba(104, 141, 116, 0.6);
+  letter-spacing: normal;
+  color: #00000095;
+  font-weight: 2800;
+  font-size: 60rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80rpx;
+  height: 140rpx;
+  line-height: 140rpx;
+  text-align: center;
+  border-radius: 100%;
+  text-shadow: none;
+  text-align: center;
+  box-shadow: none;
+}
+.backendText>image{
+  width: 100rpx;
+  height: 100rpx;
+}
+@keyframes fontendText{
+  0%{
+    opacity: 0;
+    width: 80rpx;
+    height:0rpx;
+  }
+  100%{
+    opacity: 1;
+    width: 140rpx;
+    height: 140rpx;
+  }
+}
+.select{
+  overflow: hidden;
+  margin-left: 34rpx;
+  display: inline-block;
+  text-align: center;
+  width: 0rpx;
+  height: 50rpx;
+  animation-name: selectText;
+  animation-duration: .5s;
+  animation-delay: 2.2s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-in-out;
+  color:#707070;
+  font-size: 40rpx;
+  text-shadow: none;
+  text-align: center;
+}
+@keyframes selectText{
+  0%{
+    width: 0;
+  }
+  100%{
+    width: 500rpx;
+  }
+}
+.up{
+  transform-origin: top;
+  animation-duration: .5s;
+  animation-name: up;
+  animation-fill-mode: forwards;
+  animation-timing-function: cubic-bezier(4,2, 1);
+}
+@keyframes up{
+  100%{
+    transform:  scale(.5) translateY(-1800rpx);
+  }
+}
+.stage3{
+  background: #fafafa;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  align-items: center;
+  width: 600rpx;
+  height: 900rpx;
+  border-radius: 20rpx;
+  animation-name: slide-right;
+  transform: scale(2) translateX(1200rpx);
+  animation-duration: .6s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-in-out;
+  /* transform: none; */
+  box-shadow:
+    30rpx 30rpx 20rpx #cccccc,
+    0 0 0 #ffffff,
+    0 0 0 #cccccc inset,
+    4px 4px 10px #ffffff inset;
+}
+@keyframes slide-right{
+  100%{
+    transform: scale(1) translateX(0);
+  }
+}
