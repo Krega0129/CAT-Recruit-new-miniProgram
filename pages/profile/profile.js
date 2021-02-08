@@ -32,6 +32,7 @@ Page({
     notice: [],
     noticeContent: '',
     modalName: '',
+    dialog: false,
     cardBottom: null,
     flagBottom: null,
     unReadNoticeNum: 0
@@ -82,19 +83,6 @@ Page({
     })
   },
   showModal(e) {
-    if(e.currentTarget.dataset.notice) {
-      let notice = this.data.notice.find(item => item.content === e.currentTarget.dataset.notice)
-      if(!notice.isRead) {
-        notice.isRead = true
-        this.data.unReadNoticeNum--
-      }
-      this.setData({
-        noticeContent: e.currentTarget.dataset.notice,
-        notice: this.data.notice,
-        unReadNoticeNum: this.data.unReadNoticeNum
-      })
-    }
-
     this.setData({
       modalName: e.currentTarget.dataset.target
     })
@@ -104,4 +92,22 @@ Page({
       modalName: null
     })
   },
+  openDialog(e) {
+    let notice = this.data.notice.find(item => item.content === e.currentTarget.dataset.notice)
+    if(!notice.isRead) {
+      notice.isRead = true
+      this.data.unReadNoticeNum--
+    }
+    this.setData({
+      noticeContent: e.currentTarget.dataset.notice,
+      notice: this.data.notice,
+      unReadNoticeNum: this.data.unReadNoticeNum,
+      dialog: true
+    })
+  }, 
+  closeDialog() {
+    this.setData({
+      dialog: false
+    })
+  }
 })

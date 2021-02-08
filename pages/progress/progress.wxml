@@ -6,7 +6,7 @@
       恭喜你通过笔试！
     </view>
   </view>
-  <view class="cu-item text-green cuIcon-check">
+  <view class="cu-item text-green cuIcon-check" >
     <view class="content bg-green shadow-blur">
       恭喜你通过一轮面试
     </view>

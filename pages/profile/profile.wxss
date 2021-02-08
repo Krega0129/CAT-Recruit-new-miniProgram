@@ -1,4 +1,10 @@
 /* pages/profile/profile.wxss */
+page {
+  background-color: #ecf0f3;
+  --RBShadow: rgba(207, 219, 230, .7);
+  --LTShadow: rgba(255, 255, 255, .7);
+}
+
 .bg {
   z-index: -1;
   width: 2000rpx; 
@@ -14,7 +20,13 @@
 
 .card {
   border-radius: 20rpx;
-  box-shadow: 1rpx 4rpx 20rpx #e5e5eb;
+  background-color: #ecf0f3;
+  box-shadow: 2px 6px 12px var(--RBShadow), -1px -1px 4px var(--LTShadow);
+  transition: box-shadow .2s ease-out;
+}
+ 
+.card-active {
+  box-shadow: -2px -2px 10px rgba(255, 255, 255, .3);
 }
 
 .icon {
@@ -25,7 +37,7 @@
 
 .btns {
   box-sizing: border-box;
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 
 .btn {
@@ -33,5 +45,11 @@
   height: 45%;
   border-radius: 20rpx;
   box-sizing: border-box;
-  box-shadow: 1rpx 4rpx 20rpx #e5e5eb;
+  background: #ecf0f3;
+  box-shadow: 10px 10px 20px var(--RBShadow), -10px -10px 20px var(--LTShadow);
+  transition: box-shadow .2s ease-out;
+}
+
+.btn-active {
+  box-shadow: none;
 }

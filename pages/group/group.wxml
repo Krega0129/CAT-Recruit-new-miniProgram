@@ -2,12 +2,14 @@
 <view class="btn round flex justify-between pos-ab text-center">
   <view class="weChat round pos-ab text-{{weChat?'white':'olive'}}" bindtap="weChat">微信</view>
   <view class="qq round pos-ab text-{{weChat?'olive':'white'}}" bindtap="qq">QQ</view>
-  <view class="round bg-olive weChatBg" style="transform: {{weChat?'translateX(0) rotateZ(0)':'translateX(150rpx) rotateZ(180deg)'}};"></view>
+  <view class="round bg-olive weChatBg" style="transform: {{weChat?'translateX(0)':'translateX(150rpx)'}};"></view>
 </view>
 
-<view class="qrcode pos-re" style="transform: {{weChat?'rotateY(0)':'rotateY(180deg)'}};">
-  <view class="weChatQRcode pos-ab bg-red full"> 微信二维码 </view>
-  <view class="qqQRcode pos-ab bg-blue full"> QQ二维码 </view>
+<view class="box">
+  <view class="qrcode pos-re" style="transform: {{weChat?'rotateY(0)':'rotateY(180deg)'}};">
+    <view class="weChatQRcode pos-ab full"> 微信二维码 </view>
+    <view class="qqQRcode pos-ab full"> QQ二维码 </view>
+  </view>
 </view>
 
 <view class="text-xl text-center">扫描二维码进入{{'一轮考核'}}{{weChat ? '微信' : 'QQ'}}群</view>

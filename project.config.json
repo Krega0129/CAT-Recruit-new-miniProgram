@@ -36,7 +36,7 @@
   },
   "compileType": "miniprogram",
   "libVersion": "2.14.4",
-  "appid": "wxbf24e4c755c37d93",
+  "appid": "wx027de79ecf54e57c",
   "projectname": "%E6%8B%9B%E6%96%B0%E5%B0%8F%E7%A8%8B%E5%BA%8F",
   "debugOptions": {
     "hidedInDevtools": []
@@ -87,6 +87,13 @@
           "id": -1,
           "name": "pages/reservation/reservation",
           "pathName": "pages/reservation/reservation",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/progress/progress",
+          "pathName": "pages/progress/progress",
           "scene": null
         }
       ]
