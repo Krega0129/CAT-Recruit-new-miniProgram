@@ -1,1 +1,55 @@
 /* pages/profile/profile.wxss */
+page {
+  background-color: #ecf0f3;
+  --RBShadow: rgba(207, 219, 230, .7);
+  --LTShadow: rgba(255, 255, 255, .7);
+}
+
+.bg {
+  z-index: -1;
+  width: 2000rpx; 
+  height: 2000rpx; 
+  left: 50%; 
+  background: #74a594;
+  transform: translate(-50%, -73%);
+}
+
+.container {
+  padding: 60rpx 80rpx 0 80rpx;
+}
+
+.card {
+  border-radius: 20rpx;
+  background-color: #ecf0f3;
+  box-shadow: 2px 6px 12px var(--RBShadow), -1px -1px 4px var(--LTShadow);
+  transition: box-shadow .2s ease-out;
+}
+ 
+.card-active {
+  box-shadow: -2px -2px 10px rgba(255, 255, 255, .3);
+}
+
+.icon {
+  width: 100rpx;
+  line-height: 100rpx;
+  font-size: 56rpx;
+}
+
+.btns {
+  box-sizing: border-box;
+  /* overflow: hidden; */
+}
+
+.btn {
+  width: 48%;
+  height: 45%;
+  border-radius: 20rpx;
+  box-sizing: border-box;
+  background: #ecf0f3;
+  box-shadow: 10px 10px 20px var(--RBShadow), -10px -10px 20px var(--LTShadow);
+  transition: box-shadow .2s ease-out;
+}
+
+.btn-active {
+  box-shadow: none;
+}

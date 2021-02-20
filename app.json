@@ -2,40 +2,20 @@
   "pages": [
     "pages/home/home",
     "pages/sign/sign",
-    "pages/sign2/sign2",
-    "pages/profile/profile"
-
+    "subPages/sign2/sign2",
+    "subPages/sign3/sign3",
+    "pages/profile/profile",
+    "pages/progress/progress",
+    "pages/reservation/reservation",
+    "pages/group/group",
+    "pages/more/more"
   ],
   "window": {
     "navigationStyle": "custom"
   },
   "usingComponents": {
-      "cu-custom":"/colorui/components/cu-custom"
-  },
-  "tabBar": {
-    "color": "#7dc5eb",
-    "selectedColor": "#7dc5eb",
-    "list": [
-      {
-        "pagePath": "pages/home/home",
-        "text": "首页",
-        "iconPath": "/assets/img/tabbar/home.png",
-        "selectedIconPath": "/assets/img/tabbar/home-active.png"
-      },
-      {
-        "pagePath": "pages/sign/sign",
-        "text": "报名",
-        "iconPath": "/assets/img/tabbar/sign.png",
-        "selectedIconPath": "/assets/img/tabbar/sign-active.png"
-      },
-      {
-        "pagePath": "pages/profile/profile",
-        "text": "我的",
-        "iconPath": "/assets/img/tabbar/profile.png",
-        "selectedIconPath": "/assets/img/tabbar/profile-active.png"
-      }
-    ]
-  },
+      "cu-custom":"/colorui/components/cu-custom"},
+  
   "style": "v2",
   "sitemapLocation": "sitemap.json"
 }

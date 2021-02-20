@@ -57,16 +57,15 @@
     "conversation": {
       "list": []
     },
-    "game": {
+    "plugin": {
+      "current": -1,
       "list": []
     },
-    "plugin": {
+    "game": {
+      "current": -1,
       "list": []
     },
     "gamePlugin": {
-      "list": []
-    },
-    "miniprogram": {
       "list": []
     }
   }

@@ -1,0 +1,133 @@
+<cu-custom bgColor="bg-purple"></cu-custom>
+<view class="bg-2" style="width:100vw;height:89vh;">
+  <!-- <view class="flex flex-direction align-center" style="width:100%;height:100%;display:none;">
+    <view class="direction flex justify-around flex-direction align-center"
+      >
+      <view class="directionIcon fontend-normal" catchtap="click_fontend">
+        <view class="fontendText fontendText-normal">JS</view>
+      </view>
+      <view class="selectTipText">请选择一个方向</view>
+      <view class="directionIcon backend-normal">
+        <view class="backendText backendText-normal">
+          <image src="../../assets/img/java/java.png"></image>
+        </view>
+      </view>
+    </view>
+  </view> -->
+  <view class="first flex flex-direction justify-around {{stage != 1?'hide':'one-2'}}" style="position:absolute;width:100%;height:90%;background:url('http://47.107.246.2:8083/images/9289918c6e26334280f44963b1fb2e9.jpg');background-size:100% 90vh;background-position: 0 0px;background-repeat:no-repeat;overflow:hidden;">
+    <view class="f" style="margin-top:2vh;margin-left:60rpx;" catchtap="getFont">
+      <view class="flex justify-around align-center" style="width:300rpx;height:200rpx;background:url('/assets/img/f.png');background-size:300rpx 300rpx;background-position:0 -30rpx">
+        <view class="FontEnd" style="margin:40rpx 0 0 0">FontEnd</view>
+      </view>
+      <view class="dirtext">
+        <view class="flex" style="margin-bottom:3vh;">
+          <view class="dian"></view>
+          <view class="dirintro">前:代表与人直接打交道的这部分,包括界面的展现,与用户的交互等</view>
+        </view>
+        <view class="flex" style="margin-bottom:3vh">
+          <view class="dian"></view>
+          <view class="dirintro" style="width:51vw;">端:代表输出终端,例如pc浏览器,手机浏览器,APP,应用程序</view>
+        </view>
+        <view class="flex">
+          <view class="dian"></view>
+          <view class="dirintro" style="width:35vw;">前端:呈现给用户的视觉和基本的操作</view>
+          
+         
+        </view>
+        
+      </view>
+    </view>
+    <view class="b self-end flex flex-direction justify-end align-end " style="margin-bottom:100rpx;" catchtap="getBack">
+      <view class="flex ditext" style="margin-bottom:3vh;">
+        <view class="dirintro text-right btext"  style="margin-left:8rpx;">
+          <view>后端:</view>
+            <view>不涉及创建生</view>
+            <view>成用户界面的开发</view>
+          </view>
+          <view class="dian" style="margin-left:10rpx;"></view>
+      </view>
+      <view class="flex ditext" style="margin-bottom:3vh;">
+          <view class="dirintro text-right btext"  style="margin-left:8rpx;">
+            <view>从数据库或</view>
+            <view>其他数据源写入读取和处</view>
+            <view>理数据,并提供数据给页面进行展现</view>
+          </view>
+          <view class="dian" style="margin-left:10rpx"></view>
+        </view>
+        <view class="flex ditext" style="margin-bottom:3vh;">
+          <view class="dirintro text-right btext"  style="margin-left:8rpx;">
+            <view>围绕前端构建程序，并提供所需的所有</view>
+            <view>支持并确保站点或应用始终正常运行</view>
+          </view>
+          <view class="dian" style="margin-left:10rpx"></view>
+        </view>
+      <!-- <view class="flex justify-around align-center" style="width:240rpx;height:200rpx;background:url('/assets/img/b.png');background-size:340rpx 340rpx;background-position:-50rpx -80rpx;margin:0rpx 80rpx 80rpx 0;">
+      </view> -->
+      <view style="margin:0rpx 70rpx 0 10rpx;">BackEnd</view></view>
+  </view>
+  <view  class="flex flex-direction align-center second {{stage == 1?'hide':'two-1'}}" style="position:absolute;width:100%;height:90%;">
+    <image src="http://47.107.246.2:8083/images/b8d7460c1cd312f5dd03bb1673fe408.jpg" style="position:absolute;width:100%;height:90vh"></image>
+    <view class="first flex" style="width:100%;overflow:hidden">
+      <view>
+        <image src="../../assets/img/1.png" style="width:320rpx;height:320rpx;margin-left:80rpx;"></image>
+      </view>
+      <view class="circle" style="width:340rpx;height:340rpx;overflow:hidden">
+        <view style="width:300rpx;height:300rpx;overflow:hidden"></view>
+      </view>
+    </view>
+    <view class="text">
+      <view class="hello animation-fade" style="{{stage == 2?'':'display:none'}}">Hello!</view>
+      <view class="welcome animation-fade" style="{{stage == 2?'':'display:none'}}">请填写你的个人信息</view>
+      <!-- <view class="hello animation-fade" style="{{stage == 3?'':'display:none'}}">CAT!</view> -->
+      <view class="hello animation-fade " style="{{stage == 3 || stage == 4?'':'display:none'}}">
+        <view class="{{stage == 3 || stage == 4?'stage-3-first-1':'stage-3-0'}}">
+        <input type="text" placeholder="手机号码" bindinput="getInput" data-type="phone" bindblur="phoneReg"></input>
+        <view class="cuIcon-dianhua profile {{phoneTrue == 1?'':phoneTrue == 2?'iconSuccess':'iconFail'}}"></view>
+      </view>
+      </view>
+      <view class="welcome animation-fade text-center" style="margin-top:28rpx; {{stage == 3?'':'display:none'}}">可以介绍一下你自己吗?</view>
+    </view>
+    <view class="form flex flex-direction justify-around align-center" style="height:50vh;">
+      <view class="{{stage == 2?'stage-3-first-1':'stage-3-0'}}">
+        <input type="text" placeholder="姓名" bindinput="getInput" data-type="name" bindblur="nameReg"></input>
+        <view class="cuIcon-friendaddfill profile {{nameTrue == 1?'':nameTrue == 2?'iconSuccess':'iconFail'}}"></view>
+      </view>
+      <view class="{{stage == 2?'stage-3-first-2':'stage-3-1'}}">
+        <input type="text" placeholder="学号" bindinput="getInput" data-type="number" bindblur="numberReg"></input>
+        <view class="cuIcon-upstagefill profile {{numberTrue == 1?'':numberTrue == 2?'iconSuccess':'iconFail'}}"></view>
+      </view>
+      <view class="{{stage == 2?'stage-3-first-3':'stage-3-2'}}">
+        <input type="text" placeholder="学院/专业/班级" bindinput="getInput" data-type="class" bindblur="classReg"></input>
+        <view class="cuIcon-activityfill profile {{classTrue == 1?'':classTrue == 2?'iconSuccess':'iconFail'}}"></view>
+      </view>
+      <view class="dir-2 {{stage == 2?'stage-3-first-4':'stage-3-3'}}">
+        <text wx:if="{{direction == 1}}">方向:前端</text>
+        <text wx:else>方向:后端</text>
+        <view class="cuIcon-usefullfill profile2"></view>
+      </view>
+      <view class="stage3 flex justify-around align-center" style="{{stage == 3|| stage == 4?'':'display:none'}}">
+        <view>
+          <textarea bindinput="getInput" data-type="introduce" style="width:100%;height:28vh;font-size:32rpx;" name="" id="" cols="1" rows="1" placeholder="例如兴趣爱好,目前所掌握的知识,其他方面的一些技能等"></textarea>
+        </view>
+      </view>
+      <view class="self-end stage-3-first-4 next flex align-center justify-around" style="" bindtap="nextStep">
+      <view class="cuIcon-check"></view></view>
+    </view>
+  </view>
+  <view class="stage4 flex flex-direction align-center justify-center {{stage == 4?'stage3-4':'hide'}}" style="position:absolute;width:100%;height:90%;">
+    <view class="{{stage == 4?'animation-shake':''}}" style="position:relative;width:70%;height:36%;background:#ffffff;border-radius:14rpx;">
+      <view class="flex justify-center align-center" style="left:50%;transform:translate(-50%,-70rpx); position:absolute;width:140rpx;height:140rpx;border-radius:100%;background:#22b573;border:3px solid #ffffff;">
+        <view class="cuIcon-check" style="font-size:80rpx;color:#ffffff;"></view>
+      </view>
+      <view class="text-center" style="font-size:42rpx;color:#000000; margin-top:100rpx;">恭喜你报名成功</view>
+      <view class="text-center" style="font-size:34rpx;color:#999999;margin-top:50rpx;">希望你在编成路上越走越远</view>
+      <view class="text-center" style="font-size:34rpx;color:#999999;">继续努力,加油!</view>
+      <view class="flex justify-center align-center" style="width:100%;margin-top:40rpx;">
+        <view class="text-center" style="color:#ffffff; width:80%;height:70rpx;line-height:70rpx;background:#22b573;">前往主页</view>
+      </view>
+      
+    </view>
+  </view>
+  <!-- <view class="next-3 cuIcon-pullright" bindtap="nextStep"></view> -->
+  <view class="pre-1 cuIcon-back_android {{stage == 1?'hide':'two-1'}}" bindtap="preStep"></view>
+</view>
