@@ -2,11 +2,12 @@
   "pages": [
     "pages/home/home",
     "pages/sign/sign",
-    "pages/profile/profile",
-    "pages/progress/progress",
-    "pages/reservation/reservation",
-    "pages/group/group",
-    "pages/more/more"
+    "pages/profile/index/index",
+    "pages/profile/progress/progress",
+    "pages/profile/reservation/reservation",
+    "pages/profile/group/group",
+    "pages/profile/more/more",
+    "pages/login/login"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -31,7 +32,7 @@
         "selectedIconPath": "/assets/img/tabbar/sign-active.png"
       },
       {
-        "pagePath": "pages/profile/profile",
+        "pagePath": "pages/profile/index/index",
         "text": "我的",
         "iconPath": "/assets/img/tabbar/profile.png",
         "selectedIconPath": "/assets/img/tabbar/profile-active.png"

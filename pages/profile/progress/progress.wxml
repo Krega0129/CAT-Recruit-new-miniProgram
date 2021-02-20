@@ -1,0 +1,11 @@
+<!--pages/progress/progress.wxml-->
+<view class="bg cu-timeline" style="background-image: url(../../../assets/img/魔方.jpg);background-size: 200px 200px; background-position: right bottom; background-repeat: no-repeat;">
+  <block wx:for="{{progress}}" wx:key="scheduleId">
+    <view class="cu-time">{{item.appointTime}}</view>
+    <view class="cu-item cur cuIcon-{{item.adoptChecked === 1 ? 'check' : 'close'}} text-{{item.adoptChecked === 1 ? 'green' : 'red'}}">
+      <view class="content bg-{{item.adoptChecked === 1 ? 'olive' : 'red'}} shadow-blur">
+        {{(item.adoptChecked === 1 ? '恭喜你通过了' : '很遗憾，你没有通过') + item.recruitmentStage}}！
+      </view>
+    </view>
+  </block>
+</view>
