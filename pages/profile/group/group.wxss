@@ -13,7 +13,6 @@ page {
   left: 50%;
   transform: translate(-50%, 0);
   box-sizing: content-box; 
-  /* border: 1px solid #74a594; */
   background: #ecf0f3;
   box-shadow: 10px 10px 20px var(--RBShadow), -10px -10px 20px var(--LTShadow);
 }

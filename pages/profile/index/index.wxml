@@ -1,4 +1,8 @@
 <!--pages/profile/profile.wxml-->
+<cu-custom bgColor="bg-olive">
+  <text slot="content">个人中心</text>
+</cu-custom>
+
 <view class="bg pos-fix round"></view>
 
 <view class="container">

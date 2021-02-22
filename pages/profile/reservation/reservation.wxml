@@ -1,4 +1,8 @@
 <!--pages/reservation/reservation.wxml-->
+<cu-custom bgColor="bg-olive" isBack="{{true}}">
+  <text slot="content">预约</text>
+</cu-custom>
+
 <view class="margin-sm">
   <view wx:if="{{!isReservated}}">
     <view class="card padding margin-bottom-lg radius" wx:for="{{reservation}}" wx:key="index">

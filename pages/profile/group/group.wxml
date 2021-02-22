@@ -1,17 +1,23 @@
 <!--pages/group/group.wxml-->
-<view class="btn round flex justify-between pos-ab text-center">
-  <view class="weChat round pos-ab text-{{weChat?'white':'olive'}}" bindtap="weChat">微信</view>
-  <view class="qq round pos-ab text-{{weChat?'olive':'white'}}" bindtap="qq">QQ</view>
-  <view class="round bg-olive weChatBg" style="transform: {{weChat?'translateX(0)':'translateX(150rpx)'}};"></view>
+<cu-custom bgColor="bg-olive" isBack="{{true}}">
+  <text slot="content">进群</text>
+</cu-custom>
+
+<view class="pos-re">
+  <view class="btn round flex justify-between pos-ab text-center">
+    <view class="weChat round pos-ab text-{{weChat?'white':'olive'}}" bindtap="weChat">微信</view>
+    <view class="qq round pos-ab text-{{weChat?'olive':'white'}}" bindtap="qq">QQ</view>
+    <view class="round bg-olive weChatBg" style="transform: {{weChat?'translateX(0)':'translateX(150rpx)'}};"></view>
+  </view>
 </view>
 
 <view class="box">
   <view class="qrcode pos-re" style="transform: {{weChat?'rotateY(0)':'rotateY(180deg)'}};">
     <view class="weChatQRcode pos-ab full">
-      <image src="../../../assets/img/CAT-logo.png"></image>
+      <image src="../../../assets/img/CAT-logo.png" class="full"></image>
     </view>
     <view class="qqQRcode pos-ab full">
-      <image src="../../../assets/img/1.png"></image>
+      <image src="../../../assets/img/1.png" class="full"></image>
     </view>
   </view>
 </view>

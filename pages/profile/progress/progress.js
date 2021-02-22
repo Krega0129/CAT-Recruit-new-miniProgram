@@ -18,7 +18,7 @@ Page({
         wx.hideLoading()
         if(res && res.data && res.data.code && res.data.code === H_config.STATUSCODE_selectSchedule_SUCCESS) {
           for(let item of res.data.data) {
-            item.appointTime = item.appointTime.slice(5, 10)
+            item.currentTime = item.currentTime.slice(5, 10)
           }
           this.setData({
             progress: res.data.data
