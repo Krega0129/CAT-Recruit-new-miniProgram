@@ -1,0 +1,113 @@
+/* pages/reservation/reservation.wxss */
+page {
+  background-color: #ecf0f3;
+  --RBShadow: rgba(207, 219, 230, .8);
+  --LTShadow: rgba(255, 255, 255, .8);
+}
+
+.card {
+  background: #ecf0f3;
+  box-shadow: 10px 10px 20px #d1d9e6, -10px -10px 20px #fff;
+  transition: box-shadow .2s ease-out;
+}
+
+.card-active {
+  box-shadow: none;
+}
+
+.btn {
+  background-color: #ecf0f3;
+  box-shadow: 2px 6px 12px var(--RBShadow), -2px -2px 10px var(--LTShadow);
+  transition: box-shadow .2s ease-out;
+}
+
+.btn-active {
+  box-shadow: -2px -2px 10px rgba(255, 255, 255, .3);
+}
+
+.ticket-left {
+  width: 50vw; 
+  border-right: 2px dotted white;
+}
+
+.ticket-left::after {
+  content: '';
+  position: absolute;
+  display: block;
+  width: 50rpx;
+  height: 50rpx;
+  border-radius: 50%;
+  background: #ecf0f3;
+  z-index: 2;
+  right: -25rpx;
+  top: -25rpx;
+}
+
+.ticket-left::before {
+  content: '';
+  position: absolute;
+  display: block;
+  width: 50rpx;
+  height: 50rpx;
+  border-radius: 50%;
+  background: #ecf0f3;
+  z-index: 2;
+  left: -25rpx;
+  top: -25rpx;
+}
+
+.ticket-right {
+  width: 30vw;
+}
+
+.ticket-right::before {
+  content: '';
+  position: absolute;
+  display: block;
+  width: 50rpx;
+  height: 50rpx;
+  border-radius: 50%;
+  background: #ecf0f3;
+  z-index: 2;
+  right: -25rpx;
+  top: -25rpx;
+}
+
+.ticket-right::after {
+  content: '';
+  position: absolute;
+  display: block;
+  width: 50rpx;
+  height: 50rpx;
+  border-radius: 50%;
+  background: #ecf0f3;
+  z-index: 2;
+  right: -25rpx;
+  bottom: -25rpx;
+}
+
+.ticket-left-content::before {
+  content: '';
+  position: absolute;
+  display: block;
+  width: 50rpx;
+  height: 50rpx;
+  border-radius: 50%;
+  background: #ecf0f3;
+  z-index: 2;
+  left: -25rpx;
+  bottom: -25rpx;
+}
+
+.ticket-left-content::after {
+  content: '';
+  position: absolute;
+  display: block;
+  width: 50rpx;
+  height: 50rpx;
+  border-radius: 50%;
+  background: #ecf0f3;
+  z-index: 2;
+  right: -25rpx;
+  bottom: -25rpx;
+}

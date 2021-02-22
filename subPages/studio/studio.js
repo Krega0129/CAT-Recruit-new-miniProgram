@@ -1,4 +1,4 @@
-// pages/progress/progress.js
+// subPages/studio/studio.js
 Page({
 
   /**

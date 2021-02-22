@@ -1,4 +1,5 @@
 // subPages/sign3/sign3.js
+import {baomin} from '../../service/profile'
 Page({
 
   /**
@@ -14,7 +15,7 @@ Page({
     phoneTrue:1,
     number:'',
     numberTrue:1,
-    class:'',
+    clazz:'',
     classTrue:1,
     introduce:'',
   },
@@ -31,7 +32,7 @@ Page({
     })
   },
   nextStep(){
-    const {stage} = this.data
+    const {stage,name,phone,number,clazz,introduce,direction} = this.data
     if(stage == 1){
       this.setData({
         stage:2
@@ -50,9 +51,30 @@ Page({
     }else if(stage == 3){
       const {phoneTrue} = this.data
       if(phoneTrue == 2){
-        this.setData({
-          stage:4
-        })
+        console.log(123);
+        baomin({
+          clazz,
+          name,
+          phone,
+          introduce,
+          dirSummary:introduce,
+          stuNumber:number,
+          direction:direction == 1?'前端':'后端'}).then(res=>{
+            if(res.data.code == 200){
+              this.setData({
+                stage:4
+              })
+
+            }else{
+              wx.showToast({
+                title: '报名失败',
+              })
+            }
+            wx.hideLoading({
+              success: (res) => {},
+            })
+
+          })
       }else{
         this.phoneReg()
       }
@@ -105,7 +127,7 @@ Page({
     }
   },
   classReg(){
-    if(this.data.class.trim() == ''){
+    if(this.data.clazz.trim() == ''){
       this.setData({
         classTrue:3
       })

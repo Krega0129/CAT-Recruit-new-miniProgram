@@ -1,5 +1,5 @@
 /* pages/progress/progress.wxss */
 .bg {
-  background-color: #ecf0f3;
+  background-color: #ebeef3;
   min-height: 100vh;
 }

@@ -3,7 +3,10 @@
 }
 
 .bg-2 {
-  background: #ffffff !important;
+  background: linear-gradient(to top,#ffd14e,#ffd14e,#ffd14e,#ffd14e)  !important;
+}
+.bg-3{
+  background: linear-gradient(to right,#ffb2ad ,#ca99fe ) !important;
 }
 
 /* .direction {
@@ -411,4 +414,7 @@ input {
 }
 .stage3-4{
   z-index: 10;
+}
+.first{
+  z-index: 4;
 }

@@ -1,21 +1,39 @@
 {
   "pages": [
     "pages/home/home",
-    "pages/sign/sign",
-    "subPages/sign2/sign2",
     "subPages/sign3/sign3",
-    "pages/profile/profile",
-    "pages/progress/progress",
-    "pages/reservation/reservation",
-    "pages/group/group",
-    "pages/more/more"
+    "subPages/studio/studio",
+    "pages/profile/index/index",
+    "pages/profile/progress/progress",
+    "pages/profile/reservation/reservation",
+    "pages/profile/group/group",
+    "pages/profile/more/more",
+    "pages/login/login"
   ],
   "window": {
     "navigationStyle": "custom"
   },
   "usingComponents": {
-      "cu-custom":"/colorui/components/cu-custom"},
-  
+      "cu-custom":"/colorui/components/cu-custom"
+  },
+  "tabBar": {
+    "color": "#74a594",
+    "selectedColor": "#74a594",
+    "list": [
+      {
+        "pagePath": "pages/home/home",
+        "text": "首页",
+        "iconPath": "/assets/img/tabbar/home.png",
+        "selectedIconPath": "/assets/img/tabbar/home-active.png"
+      },
+      {
+        "pagePath": "pages/profile/index/index",
+        "text": "我的",
+        "iconPath": "/assets/img/tabbar/profile.png",
+        "selectedIconPath": "/assets/img/tabbar/profile-active.png"
+      }
+    ]
+  },
   "style": "v2",
   "sitemapLocation": "sitemap.json"
 }

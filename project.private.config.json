@@ -23,6 +23,12 @@
           "pathName": "subPages/sign3/sign3",
           "query": "",
           "scene": null
+        },
+        {
+          "name": "subPages/studio/studio",
+          "pathName": "subPages/studio/studio",
+          "query": "",
+          "scene": null
         }
       ]
     }

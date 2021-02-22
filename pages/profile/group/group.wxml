@@ -7,8 +7,12 @@
 
 <view class="box">
   <view class="qrcode pos-re" style="transform: {{weChat?'rotateY(0)':'rotateY(180deg)'}};">
-    <view class="weChatQRcode pos-ab full"> 微信二维码 </view>
-    <view class="qqQRcode pos-ab full"> QQ二维码 </view>
+    <view class="weChatQRcode pos-ab full">
+      <image src="../../../assets/img/CAT-logo.png"></image>
+    </view>
+    <view class="qqQRcode pos-ab full">
+      <image src="../../../assets/img/1.png"></image>
+    </view>
   </view>
 </view>
 

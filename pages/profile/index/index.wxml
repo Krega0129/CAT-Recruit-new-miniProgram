@@ -2,11 +2,17 @@
 <view class="bg pos-fix round"></view>
 
 <view class="container">
-  <view class="avatar cu-avatar round" style="width: 160rpx; height: 160rpx; overflow: hidden">
-    <image src="../../assets/img/head.jpg" class="full"></image>
+  <view class="avatar cu-avatar round" style="width: 160rpx; height: 160rpx; overflow: hidden; display: block" wx:if="{{isLogin}}">
+    <image src="{{userInfo.avatarUrl}}" class="full"></image>
   </view>
-  <view class="text-white text-xxl margin-top">Krega，下午好！</view>
-  <view class="text-white text-lg margin-tb">2021/01/27 周三 晴 </view>
+  <view class="avatar cu-avatar round" style="width: 160rpx; height: 160rpx; overflow: hidden; display: block" wx:else></view>
+  <view class="text-white text-xxl margin-top dp-in-bk" wx:if="{{isLogin}}">
+    {{userInfo.nickName}}，{{time}}！
+  </view>
+  <view class="text-white text-xxl margin-top dp-in-bk" bindtap="toLogin" wx:else>
+    点击登录
+  </view>
+  <view class="text-white text-lg margin-tb">{{date}}</view>
   
   <view class="card flex bg-white padding-lr-lg padding-tb" bindtap="showModal" data-target="Modal" hover-class="card-active">
     <view class="flex-sub text-cut">
