@@ -6,8 +6,11 @@
 <view class="bg pos-fix round"></view>
 
 <view class="container">
-  <view class="avatar cu-avatar round" style="width: 160rpx; height: 160rpx; overflow: hidden; display: block" wx:if="{{isLogin}}">
-    <image src="{{userInfo.avatarUrl}}" class="full"></image>
+  <view class="flex justify-between" wx:if="{{isLogin}}">
+    <view class="avatar cu-avatar round" style="width: 160rpx; height: 160rpx; overflow: hidden; display: block">
+      <image src="{{userInfo.avatarUrl}}" class="full"></image>
+    </view>
+    <view class="cuIcon-edit solids line-white text-bold round padding-sm" style="height: 80rpx; margin-top: 40rpx;" bindtap="toSignUp"> 我要报名</view>
   </view>
   <view class="avatar cu-avatar round" style="width: 160rpx; height: 160rpx; overflow: hidden; display: block" wx:else></view>
   <view class="text-white text-xxl margin-top dp-in-bk" wx:if="{{isLogin}}">
@@ -34,9 +37,9 @@
     <view class="btn bg-white padding" wx:for="{{btns}}" wx:key="index" data-route="{{item.route}}" bindtap="navigate" hover-class="btn-active">
       <view class="action {{action ? 'flex' : ''}}">
         <view class="btnIcon cuIcon-{{item.icon}} text-bold text-xxl {{action ? '' : 'margin-bottom-sm'}} margin-right"></view>
-        <view class="btnTitle text-lg text-bold">{{item.title}}</view>
+        <view class="btnTitle text-lg text-bold margin-top">{{item.title}}</view>
       </view>
-      <view class="btnContent text-cut margin-top-xs text-gray">{{item.content}}</view>
+      <view class="btnContent text-cut margin-top text-gray">{{item.content}}</view>
     </view>
   </view>
     

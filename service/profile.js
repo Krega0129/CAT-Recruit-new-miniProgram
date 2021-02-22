@@ -5,6 +5,13 @@ import {
   H_config
 } from './config'
 
+export function baomin(data){
+  return request({
+    method:'POST',
+    url:'/user/signUp',
+    data
+  })
+}
 // 登录
 export function login(data) {
   return request({

@@ -1,2 +1,4 @@
 <!--pages/home/home.wxml-->
-<text>pages/home/home.wxml</text>
+<cu-custom bgColor="bg-olive">
+  <text slot="content">CAT</text>
+</cu-custom>

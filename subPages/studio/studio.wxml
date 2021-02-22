@@ -1,0 +1,250 @@
+<cu-custom bgColor="bg-white-2" toProfile="{{true}}">
+  <view slot="content">CAT工作室</view>
+</cu-custom>
+<view class="flex justify-around align-center pos-fix" style="height:74vh;width:100vw;top:0;z-index: -1">
+    <image src="/assets/img/cat.png" style="width:100vw;height:400rpx;"></image>
+</view>
+<view class="container bg-white" style="margin-top: 74vh">
+  <view class="line-progress flex">
+    <view class="flex flex-direction justify-center align-center">
+      <view class="line-progress-col"></view>
+      <view class="line-progress-circle" style="background:#87dece"></view>
+    </view>
+    <view class="flex flex-direction justify-center align-center">
+      <view class="line-progress-col"></view>
+      <view class="line-progress-circle" style="background:#f8b042"></view>
+    </view>
+    <view class="flex flex-direction justify-center align-center">
+      <view class="line-progress-col"></view>
+      <view class="line-progress-circle" style="background:#31b9f5"></view>
+    </view>
+    <view class="flex flex-direction justify-center align-center">
+      <view class="line-progress-col"></view>
+      <view class="line-progress-circle" style="background:#e74c3c"></view>
+    </view>
+  </view>
+  <view class="content">
+    <view class="progress-1-top flex align-center">
+      <view class="progress-1-top-line">
+        <view class="progress-1-catText">CAT</view>
+      </view>
+      <view class="progress-1-top-circle"></view>
+    </view>
+    <view class="progress-1-content">
+      <view class="progress-1-content-head flex flex-direction ">
+        <view class="progress-1-content-head-top"></view>
+        <view class="progress-1-content-head-text text-center">工作室概况</view>
+        <view class="progress-1-content-head-bottom"></view>
+      </view>
+      <view class="progress-1-content-body">
+        <view>
+          <image src="/assets/img/catlogo.jpg" style="width:100%;height:30vh"></image>
+        </view>
+        <view class="progress-1-content-body-text text-left flex justify-center">
+          <view>C.A.T工作室，成立于2017年，指导老师为梁祖红教授，分为前端和后台两个小组，致力于政府及企业级的大型项目开发，团队与玉兰集团、南方电网等公司建立了长期合作关系，近年来研发过广东省专家匹配系统、智能塑料回收瓶箱（与羊城通合作）等，同时组队参与App、小程序大赛并获得奖项，已有毕业师兄就职于一线互联网大厂。</view>
+        </view>
+      </view>
+    </view>
+    <view class="progress-1-bottom"></view>
+    <view class="progress-1-bottom-last"></view>
+  </view>
+  <view class="content">
+    <view class="progress-2-top flex align-center">
+      <view class="progress-2-top-line">
+        <view class="progress-2-catText">CAT</view>
+      </view>
+      <view class="progress-2-top-circle"></view>
+    </view>
+    <view class="progress-2-content">
+      <view class="progress-1-content-head flex flex-direction ">
+        <view class="progress-1-content-head-top"></view>
+        <view class="progress-1-content-head-text text-center">工作室主要成就</view>
+        <view class="progress-1-content-head-bottom"></view>
+      </view>
+      <view class="progress-2-content-body">
+        <view class="progress-2-content-body-content">
+          <view class="progress-2-content-body-content-title flex align-center">
+            <view class="progress-2-content-body-content-title-number">01</view>
+            <view class="progress-2-content-body-content-title-name">国家海洋局南海分局北斗航标系统</view>
+          </view>
+          <view class="progress-2-content-body-content-body">
+            <view class="progress-2-content-body-content-body-content">
+              该航标系统主要用于将北斗卫星传来的航标数据标注在地图上，并显示航标所在海域的水文情况。
+            </view>
+          </view>
+        </view>
+        <view class="progress-2-content-body-content">
+          <view class="progress-2-content-body-content-title flex align-center">
+            <view class="progress-2-content-body-content-title-number" style="background:#3498db">02</view>
+            <view class="progress-2-content-body-content-title-name">广州市供电局运营分析平台</view>
+          </view>
+          <view class="progress-2-content-body-content-body">
+            <view class="progress-2-content-body-content-body-content">
+              该平台主要用于管理广州市各地用电、电路维护、人员分配等的多项数据。对数据进行清洗和分析，实现数据可视化管理，解决了人工处理大量数据时的无法预测的错误、降低了人力资本，提高了数据处理速率和准确性。
+            </view>
+          </view>
+        </view>
+        <view class="progress-2-content-body-content">
+          <view class="progress-2-content-body-content-title flex align-center">
+            <view class="progress-2-content-body-content-title-number" style="background:#9b59b6">03</view>
+            <view class="progress-2-content-body-content-title-name">“友捎”带货app</view>
+          </view>
+          <view class="progress-2-content-body-content-body">
+            <view class="progress-2-content-body-content-body-content">
+              以网络技术结合村民需要，为村民打造一站式捎货服务平台，提供省心、安全、便捷的捎货体验，致力于乡村扶贫服务，在构建美丽乡村的同时，提供了就业机会。
+            </view>
+          </view>
+        </view>
+        <view class="progress-2-content-body-content">
+          <view class="progress-2-content-body-content-title flex align-center">
+            <view class="progress-2-content-body-content-title-number" style="background:#e74c3c">04</view>
+            <view class="progress-2-content-body-content-title-name">广东玉兰集团有限公司的B2B订单系统</view>
+          </view>
+          <view class="progress-2-content-body-content-body">
+            <view class="progress-2-content-body-content-body-content">
+              该系统是一个B2B订单购物一体化平台，协助玉兰集团搭建线上销售平台，解决传统销售过程痛点，项目已成功上线。
+            </view>
+          </view>
+        </view>
+        <view class="progress-2-content-body-content">
+          <view class="progress-2-content-body-content-title flex align-center">
+            <view class="progress-2-content-body-content-title-number" style="background:#d35400">05</view>
+            <view class="progress-2-content-body-content-title-name">小鱿鱼智能塑料瓶回收箱</view>
+          </view>
+          <view class="progress-2-content-body-content-body">
+            <view class="progress-2-content-body-content-body-content">
+              该项目已与广州羊城公司达成合作，使用了人脸识别、图片识别、红外感应等技术，致力于构建美丽智慧城市。
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="progress-2-bottom"></view>
+    <view class="progress-2-bottom-last"></view>
+  </view>
+  <view class="content">
+    <view class="progress-3-top flex align-center">
+      <view class="progress-3-top-line">
+        <view class="progress-3-catText">CAT</view>
+      </view>
+      <view class="progress-3-top-circle"></view>
+    </view>
+    <view class="progress-3-content">
+      <view class="progress-1-content-head flex flex-direction ">
+        <view class="progress-1-content-head-top"></view>
+        <view class="progress-1-content-head-text text-center">招新方向</view>
+        <view class="progress-1-content-head-bottom"></view>
+      </view>
+      <view class="progress-3-content-body">
+        <view class="progress-3-content-body-head flex justify-center align-center">
+          <view class="progress-3-content-body-head-circle"></view>
+          <view class="progress-3-content-body-head-text">前端</view>
+          <view class="progress-3-content-body-head-circle"></view>
+        </view>
+        <view class="progress-3-content-body-content">
+          前端负责界面实现以及业务逻辑实现，以优化用户体验为核心目的。UI是Creator，前端是Builder，通过浏览器访问的网站、某些APP、小程序、电脑上的部分桌面应用都是前端根据UI设计图，通过代码来还原实现。HTML决定网页有哪些内容和板块，CSS决定网页中内容的样式，JavaScript用于控制网页的功能、与用户交互息息相关。
+        </view>
+      </view>
+      <view class="progress-3-content-body" style="border-color:#e74c3c">
+        <view class="progress-3-content-body-head flex justify-center align-center">
+          <view class="progress-3-content-body-head-circle"></view>
+          <view class="progress-3-content-body-head-text">后端</view>
+          <view class="progress-3-content-body-head-circle"></view>
+        </view>
+        <view class="progress-3-content-body-content">
+          后台开发，通常也称服务器端开发。主要负责业务逻辑功能模块，工作中处理前端的请求，进行逻辑处理和数据交互，现阶段的Web端、移动端等都需要后台技术的支持。C.A.T工作室后台组基于Java语言开发，如果你具备基本的C语言基础，对Java编程感兴趣，有出色的学习能力以及良好的团队协作能力，那么后台组绝对是你的不二选择。
+        </view>
+      </view>
+    </view>
+    <view class="progress-3-bottom"></view>
+    <view class="progress-3-bottom-last"></view>
+  </view>
+  <view class="content">
+    <view class="progress-4-top flex align-center">
+      <view class="progress-4-top-line">
+        <view class="progress-4-catText">CAT</view>
+      </view>
+      <view class="progress-4-top-circle"></view>
+    </view>
+    <view class="progress-4-content">
+      <view class="progress-1-content-head flex flex-direction ">
+        <view class="progress-1-content-head-top"></view>
+        <view class="progress-1-content-head-text text-center">你问我答</view>
+        <view class="progress-1-content-head-bottom"></view>
+      </view>
+      <view class="progress-4-content-body">
+        <view class="progress-4-content-body-q">问：工作室学习的环境氛围如何？</view>
+        <view class="progress-4-content-body-a">
+          <text style="color:#e74c3c;">答：</text>
+          <text>我们工作室的伙伴亲切友善，并且愿意带领新伙伴一起学习 成长，互帮互助，整体学习氛围比较轻松、欢乐，同时也会定期举办分享会，在自我提升的同时，也促进了其他小伙伴们的进步。</text>
+        </view>
+      </view>
+      <view class="progress-4-content-body">
+        <view class="progress-4-content-body-q">问：工作室的前景怎么样？</view>
+        <view class="progress-4-content-body-a">
+          <text style="color:#e74c3c;">答：</text>
+          <text>已有师兄进入到互联网大厂，工作室里能接到政府和企业的项目，也有师兄们打过比赛，无论是对个人成长还是对于日后的就业都有不少帮助。</text>
+        </view>
+      </view>
+      <view class="progress-4-content-body">
+        <view class="progress-4-content-body-q">问：加入我们有福利吗？</view>
+        <view class="progress-4-content-body-a">
+          <text style="color:#e74c3c;">答：</text>
+          <text>这个是肯定有的，我们会有定期旅游和零食大礼包，且遇到节日时也会举行团建，欢乐多多，惊喜不断。</text>
+        </view>
+      </view>
+      <view class="progress-4-content-body">
+        <view class="progress-4-content-body-q">问：工作室的规章制度是怎么样的？</view>
+        <view class="progress-4-content-body-a">
+          <text style="color:#e74c3c;">答：</text>
+          <text>我们并没有严格的打卡签到制度，相对弹性自由，可以由个人来合理规划自己的时间，在技术提升的同时，也能保证学业的进步，但也希望进来的小伙伴能够自律自觉完成学习任务。</text>
+        </view>
+      </view>
+      <view class="progress-4-content-body">
+        <view class="progress-4-content-body-q">问：招新流程是什么样的呢？</view>
+        <view class="progress-4-content-body-a">
+          <text style="color:#e74c3c;">答：</text>
+          <text>今年的招新流程为：笔试、面试、一轮考核与二轮考核。笔试主要考C和简单算法，而面试主要为了了解性格和一些专业知识，最后的考核阶段则是为了检验你的学习能力。</text>
+        </view>
+      </view>
+    </view>
+    <view class="progress-4-bottom"></view>
+    <view class="progress-4-bottom-last"></view>
+  </view>
+  <view class="content">
+    <view class="progress-5-top flex align-center">
+      <view class="progress-5-top-line">
+        <view class="progress-5-catText">CAT</view>
+      </view>
+      <view class="progress-5-top-circle"></view>
+    </view>
+    <view class="progress-5-content">
+      <view class="progress-1-content-head flex flex-direction ">
+        <view class="progress-1-content-head-top"></view>
+        <view class="progress-1-content-head-text text-center">日常</view>
+        <view class="progress-1-content-head-bottom"></view>
+      </view>
+      <view class="progress-5-content-body flex flex-direction align-center ">
+        <image src="/assets/img/1.jpg" style="width:80vw;margin-bottom:14px;"></image>
+        <image src="/assets/img/1.jpg" style="width:80vw;margin-bottom:14px;"></image>
+        <image src="/assets/img/1.jpg" style="width:80vw;margin-bottom:14px;"></image>
+        <image src="/assets/img/1.jpg" style="width:80vw;margin-bottom:14px;"></image>
+        <image src="/assets/img/1.jpg" style="width:80vw;margin-bottom:14px;"></image>
+        <image src="/assets/img/1.jpg" style="width:80vw;margin-bottom:14px;"></image>
+        <image src="/assets/img/1.jpg" style="width:80vw;margin-bottom:14px;"></image>
+        <image src="/assets/img/1.jpg" style="width:80vw;margin-bottom:14px;"></image>
+        <image src="/assets/img/1.jpg" style="width:80vw;margin-bottom:14px;"></image>
+      </view>
+    </view>
+    <view class="progress-5-bottom"></view>
+    <view class="progress-5-bottom-last"></view>
+  </view>
+  <view class="footer" style="margin-top:20px">
+    <view class="end flex align-center">
+      <view class="flex-sub" style="height:1px;background:#00000080;"></view>
+      <view style="margin:0 14px;font-size:34rpx;">End</view>
+      <view class="flex-sub" style="height:1px;background:#00000080;"></view>
+    </view>
+    <view class="text-center" style="font-size:24rpx;">谢谢观阅</view>
+  </view>
+</view>

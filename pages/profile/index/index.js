@@ -34,10 +34,10 @@ Page({
         content: '点击扫码进群'
       },
       {
-        icon: 'more',
-        title: '其他',
-        route: '/pages/profile/more/more',
-        content: '查看更多'
+        icon: 'news',
+        title: '工作室介绍',
+        route: '/subPages/studio/studio',
+        content: '点击了解我吧~'
       },
     ],
     notice: [],
@@ -92,20 +92,23 @@ Page({
       }
     })
 
-    getSignUpInfo({
-      userId: wx.getStorageSync('userId')
-    }).then(res => {
-      wx.hideLoading()
-      if(res.data && res.data.code && res.data.code === H_config.STATUSCODE_getSignUpInfo_SUCCESS) {
-        this.setData({
-          isSignUp: true
-        })
-      } else {
-        this.setData({
-          isSignUp: false
-        })
-      }
-    })
+    if(wx.getStorageSync('userId')) {
+      getSignUpInfo({
+        userId: wx.getStorageSync('userId')
+      }).then(res => {
+        wx.hideLoading()
+        if(res.data && res.data.code && res.data.code === H_config.STATUSCODE_getSignUpInfo_SUCCESS) {
+          wx.setStorageSync('direction', res.data.data.direction)
+          this.setData({
+            isSignUp: true
+          })
+        } else {
+          this.setData({
+            isSignUp: false
+          })
+        }
+      })
+    }
 
     new Promise((resolve, reject) => {
       this.setData({
@@ -202,5 +205,10 @@ Page({
   },
   toLogin() {
     login()
+  },
+  toSignUp() {
+    wx.navigateTo({
+      url: '/subPages/sign3/sign3',
+    })
   }
 })

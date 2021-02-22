@@ -1,0 +1,36 @@
+{
+  "setting": {},
+  "condition": {
+    "plugin": {
+      "list": []
+    },
+    "game": {
+      "list": []
+    },
+    "gamePlugin": {
+      "list": []
+    },
+    "miniprogram": {
+      "list": [
+        {
+          "name": "pages/sign/sign",
+          "pathName": "pages/sign/sign",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "subPages/sign3/sign3",
+          "pathName": "subPages/sign3/sign3",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "subPages/studio/studio",
+          "pathName": "subPages/studio/studio",
+          "query": "",
+          "scene": null
+        }
+      ]
+    }
+  }
+}

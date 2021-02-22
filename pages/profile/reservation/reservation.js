@@ -42,18 +42,14 @@ Page({
       userId: wx.getStorageSync('userId')
     }).then(res => {
       if(res.data.code === H_config.STATUSCODE_selectUserAppoint_SUCCESS) {
-        console.log(res);
-        
-        if(res.data.data[0]) {
-          this.setData({
-            currentReservation: res.data.data[0],
-            isReservated: true
-          })
-        } else {
-          this.setData({
-            isReservated: false
-          })
-        }
+        this.setData({
+          currentReservation: res.data.data[0],
+          isReservated: true
+        })
+      } else if(res.data.code === 1500) {
+        this.setData({
+          isReservated: false
+        })
       } else {
         showToast('加载失败')
       }
@@ -61,19 +57,18 @@ Page({
 
     getAppointTime({
       direction: wx.getStorageSync('direction'),
-      // userId: wx.getStorageSync('userId')
-      userId: 1
+      userId: wx.getStorageSync('userId')
     }).then(res => {
       wx.hideLoading()
       if(res.data.code === H_config.STATUSCODE_getAppointTime_SUCCESS) {
-        console.log(res.data.data);
-        
         for(let item of res.data.data) {
           item.time = item.time.slice(5, 16)
         }
         this.setData({
           reservation: res.data.data
         })
+      } else if(res.data.code === 1500) {
+        showToast('当前阶段无可预约时间')
       } else {
         showToast('加载失败')
       }

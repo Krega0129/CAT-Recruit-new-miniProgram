@@ -39,6 +39,10 @@ Component({
       type: [Number, String],
       default: 1
     },
+    toProfile: {
+      type: [Boolean, String],
+      default: false
+    },
     url: String
   },
   /**
@@ -79,6 +83,11 @@ Component({
           url: '/pages/WCH/bill/bill'
         })
       }
+    },
+    toProfile() {
+      wx.redirectTo({
+        url: '/pages/profile/index/index',
+      })
     }
   }
 })

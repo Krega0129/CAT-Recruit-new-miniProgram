@@ -1,2 +1,27 @@
-<!--pages/sign/sign.wxml-->
-<text>pages/sign/sign.wxml</text>
+<!-- <cu-custom bgColor="bg-signBack">
+
+</cu-custom> -->
+<cu-custom bgColor="bg-yellow"></cu-custom>
+<view class="body flex align-center justify-center bg-signBack">
+  <view>
+    <view class="catText shake {{stage != 1?'catClick':''}} {{stage == 3?'up':''}}" catchtap="click_catText" style="{{catDpNone?'display:none':''}}">
+      {{text}}
+      <view class="catSelect" style="{{stage == 2 || stage == 3?'':'display:none'}}">
+        <view class="fontend" catchtap="click_fontend">
+          <view class="fontendText">{{fontendText}}</view>
+        </view> 
+        <view class="select">请选择一个方向</view>
+        <view class="backend">
+          <view class="backendText">
+            <image src="../../assets/img/java/java.png"></image>
+          </view>
+        </view>
+      </view>
+
+    </view>
+    <view class="{{stage != 3?'dp-none':'stage3'}}" style="{{catDpNone?'':'display:none'}}">
+      <view></view>
+      <view></view>
+    </view>
+  </view>
+</view>
