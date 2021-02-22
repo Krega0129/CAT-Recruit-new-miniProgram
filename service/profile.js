@@ -22,6 +22,14 @@ export function getUserInfo(data) {
   })
 }
 
+// 获取用户报名信息
+export function getSignUpInfo(data) {
+  return request({
+    url: H_config.API_getSignUpInfo_URL,
+    data: data
+  })
+}
+
 // 获取用户进度
 export function selectSchedule(data) {
   return request({

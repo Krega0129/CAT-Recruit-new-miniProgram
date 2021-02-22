@@ -34,7 +34,7 @@ Page({
       //   maxNum: 5
       // }
     ],
-    isReservated: false,
+    isReservated: true,
     currentReservation: {}
   },
   onLoad: async function (options) {

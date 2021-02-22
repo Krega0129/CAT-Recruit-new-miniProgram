@@ -18,7 +18,7 @@
     </view>
   </view>
   <view class="text-center padding-top-lg" wx:else>
-    <text class="cuIcon-roundcheckfill text-green text-sl"></text>
+    <text class="cuIcon-roundcheckfill text-green text-xsl"></text>
     <view class="text-xl text-bold margin-top">你已预约本轮面试</view>
 
     <view class="flex justify-center bg-gray" style="width: 80vw; margin: 5vh auto">

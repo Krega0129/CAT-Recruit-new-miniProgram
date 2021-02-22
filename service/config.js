@@ -10,6 +10,11 @@ H_config.API_getUserInfo_URL = '/user/selectUserInfo'
 H_config.STATUSCODE_getUserInfo_SUCCESS = 3208
 H_config.STATUSCODE_getNull_FAILD = 3554
 
+// 查询报名信息
+H_config.API_getSignUpInfo_URL = '/user/getSignUpInfo'
+H_config.STATUSCODE_getSignUpInfo_SUCCESS = 2208
+H_config.STATUSCODE_getSignUpInfo_FAILED = 2513
+
 // 获取用户进度
 H_config.API_selectSchedule_URL = '/schedule/selectSchedule'
 H_config.STATUSCODE_selectSchedule_SUCCESS = 1200

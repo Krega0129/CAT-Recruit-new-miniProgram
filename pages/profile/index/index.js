@@ -7,8 +7,10 @@ import {
 } from '../../../utils/util'
 
 import {
-  getUserInfo
+  getUserInfo,
+  getSignUpInfo
 } from '../../../service/profile'
+import { H_config } from '../../../service/config'
 
 Page({
   data: {
@@ -48,7 +50,8 @@ Page({
     date: '2021-02-18 周四',
     userInfo: app.globalData.userInfo,
     time: '上午好',
-    isLogin: wx.getStorageSync('userId')
+    isLogin: wx.getStorageSync('userId'),
+    isSignUp: false
   },
   onLoad: function (options) {
     // 计算装四个按钮容器的高度
@@ -86,6 +89,21 @@ Page({
             }
           })
         }
+      }
+    })
+
+    getSignUpInfo({
+      userId: wx.getStorageSync('userId')
+    }).then(res => {
+      wx.hideLoading()
+      if(res.data && res.data.code && res.data.code === H_config.STATUSCODE_getSignUpInfo_SUCCESS) {
+        this.setData({
+          isSignUp: true
+        })
+      } else {
+        this.setData({
+          isSignUp: false
+        })
       }
     })
 
@@ -143,12 +161,15 @@ Page({
     })
   },
   navigate(e) {
-    if(wx.getStorageSync('userId')) {
-      wx.navigateTo({
-        url: e.currentTarget.dataset.route
-      })
-    } else {
+    let route = e.currentTarget.dataset.route
+    if(!wx.getStorageSync('userId')) {
       login()
+    } else if ((route === '/pages/profile/progress/progress' || route === '/pages/profile/reservation/reservation') && !this.data.isSignUp) {
+      showToast('请先报名后再查看~')
+    } else {
+      wx.navigateTo({
+        url: route
+      })
     }
   },
   showModal(e) {
