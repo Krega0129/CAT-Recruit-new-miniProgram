@@ -22,15 +22,15 @@
         <view class="FontEnd" style="margin:40rpx 0 0 0">FontEnd</view>
       </view>
       <view class="dirtext">
-        <view class="flex align-center" style="margin-bottom:3vh;">
+        <view class="flex " style="margin-bottom:3vh;">
           <view class="dian"></view>
           <view class="dirintro">前:代表与人直接打交道的这部分,包括界面的展现,与用户的交互等</view>
         </view>
-        <view class="flex align-center" style="margin-bottom:3vh">
+        <view class="flex " style="margin-bottom:3vh">
           <view class="dian"></view>
           <view class="dirintro" style="width:51vw;">端:代表输出终端,例如pc浏览器,手机浏览器,APP,应用程序</view>
         </view>
-        <view class="flex align-center">
+        <view class="flex ">
           <view class="dian"></view>
           <view class="dirintro" style="width:35vw;">前端:呈现给用户的视觉和基本的操作</view>
 
@@ -41,7 +41,7 @@
     </view>
     <view class="b self-end flex flex-direction justify-end align-end " style="margin-bottom:100rpx;"
       catchtap="getBack">
-      <view class="flex ditext align-center" style="margin-bottom:3vh;">
+      <view class="flex ditext " style="margin-bottom:3vh;">
         <view class="dirintro text-right btext" style="margin-left:8rpx;">
           <view>后端:</view>
           <view>不涉及创建生</view>
@@ -49,7 +49,7 @@
         </view>
         <view class="dian" style="margin-left:10rpx;"></view>
       </view>
-      <view class="flex ditext align-center" style="margin-bottom:3vh;">
+      <view class="flex ditext " style="margin-bottom:3vh;">
         <view class="dirintro text-right btext" style="margin-left:8rpx;">
           <view>从数据库或</view>
           <view>其他数据源写入读取和处</view>
@@ -57,7 +57,7 @@
         </view>
         <view class="dian" style="margin-left:10rpx"></view>
       </view>
-      <view class="flex ditext align-center" style="margin-bottom:3vh;">
+      <view class="flex ditext " style="margin-bottom:3vh;">
         <view class="dirintro text-right btext" style="margin-left:8rpx;">
           <view>围绕前端构建程序，并提供所需的所有</view>
           <view>支持并确保站点或应用始终正常运行</view>
@@ -82,13 +82,13 @@
       <view class="text-center" style="font-size:34rpx;color:#999999;margin-top:50rpx;">希望你在编成路上越走越远</view>
       <view class="text-center" style="font-size:34rpx;color:#999999;">继续努力,加油!</view>
       <view class="flex justify-center align-center" style="width:100%;margin-top:40rpx;">
-        <view class="text-center" style="color:#ffffff; width:80%;height:70rpx;line-height:70rpx;background:#22b573;">
-          前往主页</view>
+        <view class="text-center" style="color:#ffffff; width:80%;height:70rpx;line-height:70rpx;background:#22b573;" bindtap="goToProfile">
+          前往个人中心</view>
       </view>
 
     </view>
   </view>
-  <view wx:else class="animation-fade flex flex-direction align-center second {{stage == 1?'hide':'two-1'}}"
+  <view wx:if="{{stage != 1}}" class="animation-fade flex flex-direction align-center second {{stage == 1?'hide':'two-1'}}"
     style="position:absolute;width:100%;height:90%;">
     <image src="http://47.107.246.2:8083/images/b8d7460c1cd312f5dd03bb1673fe408.jpg"
       style="position:absolute;width:100%;height:90vh"></image>
@@ -146,3 +146,4 @@
   <!-- <view class="next-3 cuIcon-pullright" bindtap="nextStep"></view> -->
   <view class="pre-1 cuIcon-back_android {{stage == 1?'hide':'two-1'}}" bindtap="preStep"></view>
 </view>
+<div class=""></div>
