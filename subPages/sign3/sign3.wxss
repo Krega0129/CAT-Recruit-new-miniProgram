@@ -201,6 +201,7 @@ input {
   height:17rpx;
   border-radius: 100%;
   margin-right: 10rpx;
+  margin-top: 2px;
 }
 .dirtext{
   margin-top: 26rpx;

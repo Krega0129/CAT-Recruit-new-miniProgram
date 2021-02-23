@@ -53,19 +53,26 @@ Page({
       if(phoneTrue == 2){
         console.log(123);
         baomin({
+          userId:wx.getStorageSync('userId'),
           clazz,
           name,
-          phone,
+          phoneNumber:phone,
           introduce,
           dirSummary:introduce,
           stuNumber:number,
-          direction:direction == 1?'前端':'后端'}).then(res=>{
-            if(res.data.code == 200){
+          direction:direction == 1?'前端':'后端'})
+          .then(res=>{
+            if(res.data.code == 2205){
               this.setData({
                 stage:4
               })
 
-            }else{
+            }else if(res.data.code == 2511){
+              wx.showToast({
+                title: '不可重复报名,有问题可以咨询师兄师姐',
+              })
+            }
+            else{
               wx.showToast({
                 title: '报名失败',
               })
@@ -148,6 +155,11 @@ Page({
         phoneTrue:2
       })
     }
+  },
+  goToProfile(){
+    wx.navigateTo({
+      url: '/pages/profile/index/index',
+    })
   }
  
 })

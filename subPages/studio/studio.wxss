@@ -1,7 +1,27 @@
 page{
   background: #ffffff;
 }
-.bg-white-2{
+.bg-color-1{
+  background: #87dece;
+  color:#666666;
+}
+.bg-color-2{
+  background: #f6b248;
+  color:#666666;
+}
+.bg-color-3{
+  background: #32b8f5;
+  color:#666666;
+}
+.bg-color-4{
+  background: #e74c3c;
+  color:#666666;
+}
+.bg-color-5{
+  background: #9b59b6;
+  color:#666666;
+}
+.bg-color-0{
   background: #f1f4fd;
   color:#666666;
 }

@@ -1,4 +1,4 @@
-<cu-custom bgColor="bg-white-2" toProfile="{{true}}">
+<cu-custom bgColor="{{color == 0?'bg-color-0':color == 1?'bg-color-1':color == 2?'bg-color-2':color == 3?'bg-color-3':color == 4?'bg-color-4':'bg-color-5'}}" toProfile="{{true}}">
   <view slot="content">CAT工作室</view>
 </cu-custom>
 <view class="flex justify-around align-center pos-fix" style="height:74vh;width:100vw;top:0;z-index: -1">
@@ -23,7 +23,7 @@
       <view class="line-progress-circle" style="background:#e74c3c"></view>
     </view>
   </view>
-  <view class="content">
+  <view class="content top1">
     <view class="progress-1-top flex align-center">
       <view class="progress-1-top-line">
         <view class="progress-1-catText">CAT</view>
@@ -48,7 +48,7 @@
     <view class="progress-1-bottom"></view>
     <view class="progress-1-bottom-last"></view>
   </view>
-  <view class="content">
+  <view class="content top2">
     <view class="progress-2-top flex align-center">
       <view class="progress-2-top-line">
         <view class="progress-2-catText">CAT</view>
@@ -122,7 +122,7 @@
     <view class="progress-2-bottom"></view>
     <view class="progress-2-bottom-last"></view>
   </view>
-  <view class="content">
+  <view class="content top3">
     <view class="progress-3-top flex align-center">
       <view class="progress-3-top-line">
         <view class="progress-3-catText">CAT</view>
@@ -159,7 +159,7 @@
     <view class="progress-3-bottom"></view>
     <view class="progress-3-bottom-last"></view>
   </view>
-  <view class="content">
+  <view class="content top4">
     <view class="progress-4-top flex align-center">
       <view class="progress-4-top-line">
         <view class="progress-4-catText">CAT</view>
@@ -211,7 +211,7 @@
     <view class="progress-4-bottom"></view>
     <view class="progress-4-bottom-last"></view>
   </view>
-  <view class="content">
+  <view class="content top5">
     <view class="progress-5-top flex align-center">
       <view class="progress-5-top-line">
         <view class="progress-5-catText">CAT</view>
@@ -225,15 +225,13 @@
         <view class="progress-1-content-head-bottom"></view>
       </view>
       <view class="progress-5-content-body flex flex-direction align-center ">
-        <image src="/assets/img/1.jpg" style="width:80vw;margin-bottom:14px;"></image>
-        <image src="/assets/img/1.jpg" style="width:80vw;margin-bottom:14px;"></image>
-        <image src="/assets/img/1.jpg" style="width:80vw;margin-bottom:14px;"></image>
-        <image src="/assets/img/1.jpg" style="width:80vw;margin-bottom:14px;"></image>
-        <image src="/assets/img/1.jpg" style="width:80vw;margin-bottom:14px;"></image>
-        <image src="/assets/img/1.jpg" style="width:80vw;margin-bottom:14px;"></image>
-        <image src="/assets/img/1.jpg" style="width:80vw;margin-bottom:14px;"></image>
-        <image src="/assets/img/1.jpg" style="width:80vw;margin-bottom:14px;"></image>
-        <image src="/assets/img/1.jpg" style="width:80vw;margin-bottom:14px;"></image>
+        <image src="/assets/img/1.jpg" style="width:80vw;margin-top:14px;"></image>
+        <image src="/assets/img/1.jpg" style="width:80vw;margin-top:14px;"></image>
+        <image src="/assets/img/1.jpg" style="width:80vw;margin-top:14px;"></image>
+        <image src="/assets/img/1.jpg" style="width:80vw;margin-top:14px;"></image>
+        <image src="/assets/img/1.jpg" style="width:80vw;margin-top:14px;"></image>
+        <image src="/assets/img/1.jpg" style="width:80vw;margin-top:14px;"></image>
+        <image src="/assets/img/1.jpg" style="width:80vw;margin-top:14px;"></image>
       </view>
     </view>
     <view class="progress-5-bottom"></view>
