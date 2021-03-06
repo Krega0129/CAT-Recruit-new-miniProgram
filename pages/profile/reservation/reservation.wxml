@@ -4,7 +4,7 @@
 </cu-custom>
 
 <view class="margin-sm">
-  <view wx:if="{{!isReservated}}">
+  <view wx:if="{{isReservated === false}}">
     <view class="card padding margin-bottom-lg radius" wx:for="{{reservation}}" wx:key="index">
       <view class="content flex justify-between text-lg text-bold">
         <view class="title">预约时间：{{item.time}}</view>
@@ -21,21 +21,21 @@
       <button class="btn cu-btn margin-top-lg flex text-orange" hover-class="btn-active" bindtap="appoint" data-item="{{item}}" disabled="{{item.number >= item.limitNumber}}">预约</button>
     </view>
   </view>
-  <view class="text-center padding-top-lg" wx:else>
+  <view class="text-center padding-top-lg" wx:if="{{isReservated === true}}">
     <text class="cuIcon-roundcheckfill text-green text-xsl"></text>
     <view class="text-xl text-bold margin-top">你已预约本轮面试</view>
 
     <view class="flex justify-center bg-gray" style="width: 80vw; margin: 5vh auto">
       <view class="ticket-left pos-re">
-        <view class="bg-olive padding-tb-xs">一轮面试 -- 用户名</view>
+        <view class="bg-olive padding-tb-xs">{{currentReservation.stageName}} -- {{userInfo.name}}</view>
         <view class="ticket-left-content text-center padding-tb-sm">
           <text class="cuIcon-time text-xxl"></text>
-          <view class="padding-top-sm">2-15 20:00</view>
+          <view class="padding-top-sm">{{currentReservation.time}}</view>
           <view class="">面试地点：教三 314</view>
         </view>
       </view>
       <view class="ticket-right pos-re">
-        <view class="bg-olive text-bold padding-tb-xs">前端组</view>
+        <view class="bg-olive text-bold padding-tb-xs">{{currentReservation.direction}}组</view>
         <view class="text-center padding-tb-lg">
           <text class="text-sl">2</text> 号
         </view>
@@ -49,7 +49,7 @@
     <view style="width: 70vw; margin: 30rpx auto; line-height: 50rpx">
       请在你预约时间内提前半小时到达面试地点签到并等待面试，若有demo或项目的话请带上电脑并提前打开
     </view>
-    <button class="bg-orange">取消预约</button>
+    <button class="bg-orange" bindtap="_cancelAppoint">取消预约</button>
     <view class="text-gray margin-top">*面试开始前一天可以取消预约</view>
     <view class="text-gray">之后想修改预约时间请私聊师兄师姐</view>
   </view>

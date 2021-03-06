@@ -16,7 +16,7 @@
     </view>
 
     <view class="text-cut text-lg margin-left-xs" style="max-width: 200rpx" bindtap="toProfile" wx:if="{{toProfile}}">
-      <view class="margin-left-xs cuIcon-profile padding-xs solid round line-black"></view>
+      <view class="margin-left-xs cuIcon-profile padding-xs solid round line-black" style="width: 50rpx; height: 50rpx;"></view>
     </view>
 
     <view class="action border-custom"  wx:if="{{isCustom}}" style="width:{{Custom.width}}px;height:{{Custom.height}}px;margin-left:calc(750rpx - {{Custom.right}}px)">

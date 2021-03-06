@@ -8,9 +8,10 @@ import {
 
 import {
   getUserInfo,
-  getSignUpInfo
+  getSignUpInfo,
+  getAppointTime
 } from '../../../service/profile'
-import { H_config } from '../../../service/config'
+import { H_config, BASE_URL } from '../../../service/config'
 
 Page({
   data: {
@@ -51,7 +52,7 @@ Page({
     userInfo: app.globalData.userInfo,
     time: '上午好',
     isLogin: wx.getStorageSync('userId'),
-    isSignUp: false
+    isSignUp: app.globalData.isSignUp
   },
   onLoad: function (options) {
     // 计算装四个按钮容器的高度
@@ -73,42 +74,51 @@ Page({
         })
       }
     })
-    
   },
   onShow() {
-    wx.getSetting({
-      success: res => {
-        if (res.authSetting['scope.userInfo']) {
-          // 已经授权，可以直接调用 getUserInfo 获取头像昵称，不会弹框
-          wx.getUserInfo({
-            success: res => {
-              app.globalData.userInfo = res.userInfo
-              this.setData({
-                userInfo: res.userInfo
-              })
-            }
-          })
-        }
-      }
-    })
+    // 判断是否报名
+    // if(wx.getStorageSync('userId') && !this.data.isSignUp) {
+    //   getSignUpInfo({
+    //     userId: wx.getStorageSync('userId')
+    //   }).then(res => {
+    //     if(res.data && res.data.code && res.data.code === H_config.STATUSCODE_getSignUpInfo_SUCCESS) {
+    //       wx.setStorageSync('direction', res.data.data.direction)
+    //       app.globalData.isSignUp = true
+    //       this.setData({
+    //         isSignUp: true
+    //       })
+    //     } else {
+    //       app.globalData.isSignUp = false
+    //       this.setData({
+    //         isSignUp: false
+    //       })
+    //     }
+    //     wx.hideLoading()
+    //   })
+    // }
 
-    if(wx.getStorageSync('userId')) {
-      getSignUpInfo({
-        userId: wx.getStorageSync('userId')
-      }).then(res => {
-        wx.hideLoading()
-        if(res.data && res.data.code && res.data.code === H_config.STATUSCODE_getSignUpInfo_SUCCESS) {
-          wx.setStorageSync('direction', res.data.data.direction)
-          this.setData({
-            isSignUp: true
-          })
-        } else {
-          this.setData({
-            isSignUp: false
-          })
+    if(!app.globalData.isSignUp) {
+      wx.getSetting({
+        success: res => {
+          if (res.authSetting['scope.userInfo'] && !this.data.userInfo) {
+            // 已经授权，可以直接调用 getUserInfo 获取头像昵称，不会弹框
+            wx.getUserInfo({
+              success: res => {
+                app.globalData.userInfo = res.userInfo
+                // this.setData({
+                //   userInfo: res.userInfo
+                // })
+              }
+            })
+          }
         }
       })
     }
+    
+    this.setData({
+      isSignUp: app.globalData.isSignUp,
+      userInfo: app.globalData.userInfo
+    })
 
     new Promise((resolve, reject) => {
       this.setData({
@@ -160,15 +170,36 @@ Page({
 
     this.setData({
       date: formatTime(time).split(' ')[0] + ' 周' + day,
-      isLogin: wx.getStorageSync('userId')
+      isLogin: wx.getStorageSync('userId') ? true : false
     })
   },
   navigate(e) {
     let route = e.currentTarget.dataset.route
-    if(!wx.getStorageSync('userId')) {
+    if(!wx.getStorageSync('userId') && route !== '/subPages/studio/studio') {
       login()
     } else if ((route === '/pages/profile/progress/progress' || route === '/pages/profile/reservation/reservation') && !this.data.isSignUp) {
       showToast('请先报名后再查看~')
+    } else if (route === '/pages/profile/reservation/reservation') {
+      wx.request({
+        url: BASE_URL + '/appoint/selectTime',
+        method: 'post',
+        data: {
+          userId: wx.getStorageSync('userId'),
+          direction: wx.getStorageSync('direction')
+        },
+        header: {
+          'content-type': 'application/x-www-form-urlencoded'
+        },
+        success: res => {
+          if(res.data.code === 1500) {
+            showToast('当前阶段无可预约时间')
+          } else {
+            wx.navigateTo({
+              url: route
+            })
+          }
+        }
+      })
     } else {
       wx.navigateTo({
         url: route

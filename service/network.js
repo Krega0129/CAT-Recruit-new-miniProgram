@@ -10,11 +10,11 @@ export default async function(options) {
     mask: true
   })
 
-  if(options.header) {
-    options.header.token = wx.getStorageSync('token') || ''
-  } else {
-    header.token = wx.getStorageSync('token') || ''
-  }
+  // if(options.header) {
+  //   options.header.token = wx.getStorageSync('token') || ''
+  // } else {
+  //   header.token = wx.getStorageSync('token') || ''
+  // }
   
   return new Promise((resolve, reject) => {
     wx.request({

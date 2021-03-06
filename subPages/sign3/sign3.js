@@ -69,11 +69,13 @@ Page({
 
             }else if(res.data.code == 2511){
               wx.showToast({
+                duration: 2000,
                 title: '不可重复报名,有问题可以咨询师兄师姐',
               })
             }
             else{
               wx.showToast({
+                duration: 2000,
                 title: '报名失败',
               })
             }

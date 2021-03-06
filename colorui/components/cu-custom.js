@@ -85,9 +85,15 @@ Component({
       }
     },
     toProfile() {
-      wx.redirectTo({
-        url: '/pages/profile/index/index',
-      })
+      let pages = getCurrentPages()
+      // 判断前一页是否是个人主页
+      if(pages[pages.length - 2] && 'pages/profile/index/index' === pages[pages.length - 2].route) {
+        wx.navigateBack()
+      }else {
+        wx.redirectTo({
+          url: '/pages/profile/index/index'
+        })
+      }
     }
   }
 })
