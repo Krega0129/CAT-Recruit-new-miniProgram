@@ -2,12 +2,14 @@
 import {
   getAppointTime,
   appointTime,
-  selectUserAppoint
+  selectUserAppoint,
+  cancelAppoint
 } from '../../../service/profile'
 import {
   H_config
 } from '../../../service/config'
 import { showToast } from '../../../utils/util'
+const app = getApp()
 
 Page({
   data: {
@@ -34,19 +36,28 @@ Page({
       //   maxNum: 5
       // }
     ],
-    isReservated: true,
-    currentReservation: {}
+    isReservated: false,
+    currentReservation: {},
+    userInfo: app.globalData.userInfo
   },
   onLoad: async function (options) {
+    this.setData({
+      userInfo: app.globalData.userInfo
+    })
+
     await selectUserAppoint({
       userId: wx.getStorageSync('userId')
     }).then(res => {
+      wx.hideLoading()
       if(res.data.code === H_config.STATUSCODE_selectUserAppoint_SUCCESS) {
+        let item = res.data.data
+        item.time = item.time.slice(5, 16)
         this.setData({
-          currentReservation: res.data.data[0],
+          currentReservation: item,
           isReservated: true
         })
       } else if(res.data.code === 1500) {
+        this._getAppointTime()
         this.setData({
           isReservated: false
         })
@@ -54,7 +65,8 @@ Page({
         showToast('加载失败')
       }
     })
-
+  },
+  _getAppointTime() {
     getAppointTime({
       direction: wx.getStorageSync('direction'),
       userId: wx.getStorageSync('userId')
@@ -78,17 +90,45 @@ Page({
     console.log(e.currentTarget.dataset.item);
     const appoint = e.currentTarget.dataset.item
     appointTime({
-      appointTime: '2021-' + appoint.time + ':00',
-      direction: appoint.direction,
-      stage: appoint.stageName,
+      time: '2021-' + appoint.time + ':00',
+      timeId: appoint.timeId,
       userId: wx.getStorageSync('userId')
     }).then(res => {
       wx.hideLoading()
       if(res.data.code === H_config.STATUSCODE_appointTime_SUCCESS) {
         showToast('预约成功', 'success')
         this.setData({
-          isReservated: true
+          isReservated: true,
+          currentReservation: appoint
         })
+      }
+    })
+  },
+  _cancelAppoint() {
+    wx.showModal({
+      // title: '提示',
+      content: '确定取消预约？',
+      success: res => {
+        if(res.confirm) {
+          cancelAppoint({
+            time: '2021-' + this.data.currentReservation.time + ':00',
+            timeId: this.data.currentReservation.timeId,
+            userId: wx.getStorageSync('userId')
+          }).then(res => {
+            wx.hideLoading()
+            if(res.data.code === 1200) {
+              wx.showToast({
+                title: '取消成功',
+              })
+              this._getAppointTime()
+              this.setData({
+                isReservated: false
+              })
+            } else {
+              showToast('取消失败')
+            }
+          })
+        }
       }
     })
   }

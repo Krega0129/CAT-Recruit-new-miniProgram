@@ -1,5 +1,5 @@
 <cu-custom bgColor="{{stage == 1?'bg-2':'bg-3'}}" toProfile="{{true}}"></cu-custom>
-<view class="bg-2" style="width:100vw;height:89vh;">
+<view class="bg-1" style="width:100vw;height:91vh;">
   <!-- <view class="flex flex-direction align-center" style="width:100%;height:100%;display:none;">
     <view class="direction flex justify-around flex-direction align-center"
       >
@@ -15,11 +15,13 @@
     </view>
   </view> -->
   <view wx:if="{{stage == 1}}" class="animation-fade first flex flex-direction justify-around {{stage != 1?'hide':'one-2'}}"
-    style="position:absolute;width:100%;height:90%;background:url('../../assets/img/first.jpg');background-size:100% 90vh;background-position: 0 0px;background-repeat:no-repeat;overflow:hidden;">
+    style="position:absolute;width:100%;height:90%;overflow:hidden;">
+    <image src="/assets/img/first.jpg" style="position:absolute;width:100%;height:91vh;z-index:-1"></image>
     <view class="f" style="margin-top:2vh;margin-left:60rpx;" catchtap="getFont">
       <view class="flex justify-around align-center"
-        style="width:300rpx;height:200rpx;background:url('/assets/img/f.png');background-size:300rpx 300rpx;background-position:0 -30rpx">
-        <view class="FontEnd" style="margin:40rpx 0 0 0">FontEnd</view>
+        style="width:300rpx;height:200rpx;position:relative">
+        <view class="FontEnd" style="margin:40rpx 0 0 0;z-index:1">前端</view>
+        <image src="/assets/img/f.png" style="position:absolute;width:300rpx;height:300rpx;left:0;bottom:-4vh;"></image>
       </view>
       <view class="dirtext">
         <view class="flex " style="margin-bottom:3vh;">
@@ -66,7 +68,7 @@
       </view>
       <!-- <view class="flex justify-around align-center" style="width:240rpx;height:200rpx;background:url('/assets/img/b.png');background-size:340rpx 340rpx;background-position:-50rpx -80rpx;margin:0rpx 80rpx 80rpx 0;">
       </view> -->
-      <view style="margin:0rpx 70rpx 0 10rpx;">BackEnd</view>
+      <view style="margin:0rpx 70rpx 0 10rpx;text-shadow:20rpx 20rpx 7rpx #00000070;">后端</view>
     </view>
   </view>
   <view wx:elif="{{stage == 4}}"
@@ -90,8 +92,7 @@
   </view>
   <view wx:if="{{stage != 1}}" class="animation-fade flex flex-direction align-center second {{stage == 1?'hide':'two-1'}}"
     style="position:absolute;width:100%;height:90%;">
-    <image src="/assets/img/second.jpg"
-      style="position:absolute;width:100%;height:90vh"></image>
+    <image src="/assets/img/second.jpg" style="position:absolute;width:100%;height:91vh"></image>
     <view class="first flex" style="width:100%;overflow:hidden">
       <view>
         <image src="../../assets/img/1.png" style="width:320rpx;height:320rpx;margin-left:80rpx;"></image>
@@ -129,7 +130,7 @@
       <view class="dir-2 {{stage == 2?'stage-3-first-4':'stage-3-3'}}">
         <text wx:if="{{direction == 1}}">方向:前端</text>
         <text wx:else>方向:后端</text>
-        <view class="cuIcon-usefullfill profile2"></view>
+        <!-- <view class="cuIcon-usefullfill profile2"></view> -->
       </view>
       <view class="stage3 flex justify-around align-center" style="{{stage == 3|| stage == 4?'':'display:none'}}">
         <view>
@@ -144,6 +145,6 @@
   </view> 
 
   <!-- <view class="next-3 cuIcon-pullright" bindtap="nextStep"></view> -->
-  <view class="pre-1 cuIcon-back_android {{stage == 1?'hide':'two-1'}}" bindtap="preStep"></view>
+  <view class="pre-1 cuIcon-back_android {{stage == 1?'hide':'two-1'}} margin-bottom-xs" bindtap="preStep"></view>
 </view>
 <div class=""></div>

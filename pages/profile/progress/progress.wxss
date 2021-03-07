@@ -1,4 +1,9 @@
 /* pages/progress/progress.wxss */
 .bg {
   background-color: #ebeef3;
+  /* height: 100vh; */
+}
+
+.cu-item.cur::before {
+  /* background: #74a594 !important; */
 }

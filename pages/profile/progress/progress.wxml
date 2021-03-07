@@ -3,12 +3,12 @@
   <text slot="content">进度</text>
 </cu-custom>
 
-<view class="bg cu-timeline">
+<view class="bg bg-olive cu-timeline">
   <block wx:for="{{progress}}" wx:key="scheduleId">
-    <view class="cu-time">{{item.currentTime}}</view>
-    <view class="cu-item cur cuIcon-{{item.adoptChecked === 1 ? 'check' : 'close'}} text-{{item.adoptChecked === 1 ? 'green' : 'red'}}">
-      <view class="content bg-{{item.adoptChecked === 1 ? 'olive' : 'red'}} shadow-blur">
-        {{(item.adoptChecked === 1 ? '恭喜你通过了' : '很遗憾，你没有通过') + item.recruitmentStage}}！
+    <view class="cu-time">{{item.currentTime ? item.currentTime : ''}}</view>
+    <view class="cu-item cur cuIcon-{{icon[item.adoptChecked]}} text-{{color[item.adoptChecked]}}">
+      <view class="content bg-{{color[item.adoptChecked]}} shadow-blur">
+        {{(item.adoptChecked === 1 ? '恭喜你通过了' : item.adoptChecked === 2 ? '很遗憾，你没有通过' : '') + item.recruitmentStage + (item.adoptChecked === 0 ? '还没开始' : '')}}！
       </view>
     </view>
   </block>

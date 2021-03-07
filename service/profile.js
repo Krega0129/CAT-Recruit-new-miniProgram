@@ -66,7 +66,10 @@ export function appointTime(data) {
   return request({
     url: H_config.API_appointTime_URL,
     method: 'post',
-    data: data
+    data: data,
+    header: {
+      'content-type': 'application/x-www-form-urlencoded'
+    }
   })
 }
 
@@ -87,6 +90,9 @@ export function cancelAppoint(data) {
   return request({
     url: H_config.API_cancelAppoint_URL,
     method: 'post',
-    data: data
+    data: data,
+    header: {
+      'content-type': 'application/x-www-form-urlencoded'
+    }
   })
 }

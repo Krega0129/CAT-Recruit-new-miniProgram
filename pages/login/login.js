@@ -1,7 +1,14 @@
 // pages/WCH/login/login.js
 import {
-  login
+  login,
+  getSignUpInfo
 } from '../../service/profile'
+
+import {
+  H_config
+} from '../../service/config'
+
+const app = getApp()
 
 Page({
   data: {
@@ -15,7 +22,6 @@ Page({
   },
   showLogin(e) {
     if (e.detail.errMsg == "getUserInfo:ok"){
-      console.log(e);
       const encryptedData = e.detail.encryptedData;
       const iv = e.detail.iv;
       wx.showLoading({
@@ -28,20 +34,31 @@ Page({
         encryptedData: encryptedData,
         iv: iv
       }).then(res => {
-        console.log(res);
-        
         const id = res.data.data.id
         const token = res.data.data.token
         if(res.data.code === 2203 || res.data.code === 2204) {
           wx.setStorageSync('token', token)
           wx.setStorageSync('userId', id)
           wx.hideLoading()
-          wx.showToast({
-            title: '登录成功',
-            duration: 1000
-          })
-          setTimeout(() => {
-            wx.navigateBack()
+
+          getSignUpInfo({
+            userId: id
+          }).then(res => {
+            if(res.data && res.data.code && res.data.code === H_config.STATUSCODE_getSignUpInfo_SUCCESS) {
+              wx.setStorageSync('direction', res.data.data.direction)
+              app.globalData.isSignUp = true
+              app.globalData.userInfo = res.data.data
+            } else {
+              app.globalData.isSignUp = false
+            }
+            wx.hideLoading()
+            wx.showToast({
+              title: '登录成功',
+              duration: 1000
+            })
+            setTimeout(() => {
+              wx.navigateBack()
+            })
           })
         } else {
           wx.showToast({

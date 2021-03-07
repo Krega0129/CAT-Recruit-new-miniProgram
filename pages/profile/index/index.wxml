@@ -10,11 +10,11 @@
     <view class="avatar cu-avatar round" style="width: 160rpx; height: 160rpx; overflow: hidden; display: block">
       <image src="{{userInfo.avatarUrl}}" class="full"></image>
     </view>
-    <view class="cuIcon-edit solids line-white text-bold round padding-sm" style="height: 80rpx; margin-top: 40rpx;" bindtap="toSignUp"> 我要报名</view>
+    <view class="cuIcon-edit solids line-white text-bold round padding-sm" style="height: 80rpx; margin-top: 40rpx;" wx:if="{{!isSignUp}}" bindtap="toSignUp"> 我要报名</view>
   </view>
   <view class="avatar cu-avatar round" style="width: 160rpx; height: 160rpx; overflow: hidden; display: block" wx:else></view>
   <view class="text-white text-xxl margin-top dp-in-bk" wx:if="{{isLogin}}">
-    {{userInfo.nickName}}，{{time}}！
+    {{userInfo.name ? userInfo.name: userInfo.nickName}}，{{time}}！
   </view>
   <view class="text-white text-xxl margin-top dp-in-bk" bindtap="toLogin" wx:else>
     点击登录
