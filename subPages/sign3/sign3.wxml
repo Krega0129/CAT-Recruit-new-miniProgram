@@ -15,7 +15,7 @@
     </view>
   </view> -->
   <view wx:if="{{stage == 1}}" class="animation-fade first flex flex-direction justify-around {{stage != 1?'hide':'one-2'}}"
-    style="position:absolute;width:100%;height:90%;background:url('http://47.107.246.2:8083/images/9289918c6e26334280f44963b1fb2e9.jpg');background-size:100% 90vh;background-position: 0 0px;background-repeat:no-repeat;overflow:hidden;">
+    style="position:absolute;width:100%;height:90%;background:url('../../assets/img/first.jpg');background-size:100% 90vh;background-position: 0 0px;background-repeat:no-repeat;overflow:hidden;">
     <view class="f" style="margin-top:2vh;margin-left:60rpx;" catchtap="getFont">
       <view class="flex justify-around align-center"
         style="width:300rpx;height:200rpx;background:url('/assets/img/f.png');background-size:300rpx 300rpx;background-position:0 -30rpx">
@@ -90,7 +90,7 @@
   </view>
   <view wx:if="{{stage != 1}}" class="animation-fade flex flex-direction align-center second {{stage == 1?'hide':'two-1'}}"
     style="position:absolute;width:100%;height:90%;">
-    <image src="http://47.107.246.2:8083/images/b8d7460c1cd312f5dd03bb1673fe408.jpg"
+    <image src="/assets/img/second.jpg"
       style="position:absolute;width:100%;height:90vh"></image>
     <view class="first flex" style="width:100%;overflow:hidden">
       <view>

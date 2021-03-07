@@ -1,4 +1,4 @@
-const BASE_URL = 'http://www.lizeqiang.top:8083'
+const BASE_URL = 'https://www.lizeqiang.top:8083/'
 
 const H_config = {}
 
