@@ -1,5 +1,5 @@
-// const BASE_URL = 'https://www.lizeqiang.top:8083'
-const BASE_URL = 'https://192.168.1.108:8086'
+const BASE_URL = 'https://www.lizeqiang.top:8083'
+// const BASE_URL = 'https://192.168.1.108:8086'
 
 const H_config = {}
 

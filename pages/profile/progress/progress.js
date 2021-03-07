@@ -7,7 +7,7 @@ import { H_config } from '../../../service/config';
 Page({
   data: {
     progress: [],
-    color: ['grey', 'olive', 'red'],
+    color: ['grey', 'olive', 'red', 'cyan'],
     icon: ['title', 'check', 'close']
   },
   onLoad: function (options) {

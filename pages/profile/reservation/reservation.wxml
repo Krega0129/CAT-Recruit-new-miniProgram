@@ -31,13 +31,13 @@
         <view class="ticket-left-content text-center padding-tb-sm">
           <text class="cuIcon-time text-xxl"></text>
           <view class="padding-top-sm">{{currentReservation.time}}</view>
-          <view class="">面试地点：教三 314</view>
+          <view class="">面试地点：{{currentReservation.place}}</view>
         </view>
       </view>
       <view class="ticket-right pos-re">
         <view class="bg-olive text-bold padding-tb-xs">{{currentReservation.direction}}组</view>
         <view class="text-center padding-tb-lg">
-          <text class="text-sl">2</text> 号
+          <text class="text-sl">{{currentReservation.userNumber}}</text> 号
         </view>
       </view>
     </view>

@@ -19,6 +19,18 @@ Page({
   data: {
     btns: [
       {
+        icon: 'news',
+        title: '工作室介绍',
+        route: '/subPages/studio/studio',
+        content: '点击了解我吧~'
+      },
+      {
+        icon: 'message',
+        title: '招新公告',
+        route: '/pages/profile/group/group',
+        content: '查看招新流程等信息'
+      },
+      {
         icon: 'edit',
         title: '进度',
         route: '/pages/profile/progress/progress',
@@ -28,19 +40,7 @@ Page({
         icon: 'time',
         title: '预约',
         route: '/pages/profile/reservation/reservation',
-        content: '点击预约下一轮面试'
-      },
-      {
-        icon: 'qrcode',
-        title: '进群',
-        route: '/pages/profile/group/group',
-        content: '点击扫码进群'
-      },
-      {
-        icon: 'news',
-        title: '工作室介绍',
-        route: '/subPages/studio/studio',
-        content: '点击了解我吧~'
+        content: '预约下一轮面试'
       },
     ],
     notice: [],
@@ -77,7 +77,7 @@ Page({
       }
     })
   },
-  onShow() {
+  async onShow() {
     if(!app.globalData.isSignUp) {
       wx.getSetting({
         success: res => {
@@ -86,6 +86,10 @@ Page({
             wx.getUserInfo({
               success: res => {
                 app.globalData.userInfo = res.userInfo
+                this.setData({
+                  isSignUp: app.globalData.isSignUp,
+                  userInfo: app.globalData.userInfo
+                })
               }
             })
           }
@@ -93,6 +97,37 @@ Page({
       })
     } else {
       if(wx.getStorageSync('userId')) {
+        await getSignUpInfo({
+          userId: wx.getStorageSync('userId')
+        }).then(res => {
+          if(res.data && res.data.code && res.data.code === H_config.STATUSCODE_getSignUpInfo_SUCCESS) {
+            wx.setStorageSync('direction', res.data.data.direction)
+            app.globalData.isSignUp = true
+            app.globalData.userInfo = res.data.data
+            wx.getUserInfo({
+              success: res => {
+                app.globalData.userInfo.avatarUrl = res.userInfo.avatarUrl
+                this.setData({
+                  isSignUp: app.globalData.isSignUp,
+                  userInfo: app.globalData.userInfo
+                })
+              }
+            })
+          } else {
+            app.globalData.isSignUp = false
+            wx.showToast({
+              title: '登录成功',
+              duration: 1000
+            })
+            setTimeout(() => {
+              wx.navigateBack()
+            }, 100)
+          }
+          wx.hideLoading()
+        }).catch((err) => {
+          console.log(err);
+        })
+
         getNotice({
           userId: wx.getStorageSync('userId')
         }).then(res => {
@@ -117,11 +152,6 @@ Page({
         })
       }
     }
-    
-    this.setData({
-      isSignUp: app.globalData.isSignUp,
-      userInfo: app.globalData.userInfo
-    })
 
     const time = new Date()
     let day = ''
@@ -174,7 +204,8 @@ Page({
           direction: wx.getStorageSync('direction')
         },
         header: {
-          'content-type': 'application/x-www-form-urlencoded'
+          'content-type': 'application/x-www-form-urlencoded',
+          'token': wx.getStorageSync('token')
         },
         success: res => {
           if(res.data.code === 1500) {
@@ -238,5 +269,8 @@ Page({
     wx.navigateTo({
       url: '/subPages/sign3/sign3',
     })
+  },
+  onPullDownRefresh() {
+    this.onShow()
   }
 })

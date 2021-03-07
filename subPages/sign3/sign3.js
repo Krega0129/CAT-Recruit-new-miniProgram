@@ -1,5 +1,6 @@
 // subPages/sign3/sign3.js
 import {baomin} from '../../service/profile'
+const app = getApp()
 Page({
 
   /**
@@ -66,7 +67,7 @@ Page({
               this.setData({
                 stage:4
               })
-
+              app.globalData.isSignUp = true
             }else if(res.data.code == 2511){
               wx.showToast({
                 duration:2000,

@@ -5,13 +5,20 @@
 
 <view class="bg bg-olive cu-timeline">
   <block wx:for="{{progress}}" wx:key="scheduleId">
-    <view class="cu-time">{{item.currentTime ? item.currentTime : ''}}</view>
-    <view class="cu-item cur cuIcon-{{icon[item.adoptChecked]}} text-{{color[item.adoptChecked]}}">
-      <view class="content bg-{{color[item.adoptChecked]}} shadow-blur">
-        {{(item.adoptChecked === 1 ? '恭喜你通过了' : item.adoptChecked === 2 ? '很遗憾，你没有通过' : '') + item.recruitmentStage + (item.adoptChecked === 0 ? '还没开始' : '')}}！
+    <block wx:if="{{!(item.adoptChecked === 0 && item.checked === 0)}}">
+      <view class="cu-time">{{item.currentTime ? item.currentTime : ''}}</view>
+      <view class="cu-item cur cuIcon-{{icon[item.adoptChecked]}} text-{{color[item.adoptChecked]}}">
+        <view class="content pos-re bg-{{item.adoptChecked === 1 ? color[1] : item.adoptChecked === 2 ? color[2] : (item.adoptChecked === 0 && item.checked === 1) ? color[3] : color[0]}} shadow-blur">
+          {{(item.adoptChecked === 1 ? '恭喜你通过了' : item.adoptChecked === 2 ? '很遗憾，你没有通过' : '') + item.recruitmentStage + ((item.adoptChecked === 0 && item.checked === 0) ? '还没开始' : (item.adoptChecked === 0 && item.checked === 1) ? '正在进行中' : '')}}！
+          <view class="bars pos-ab flex justify-between" style="right: 5vw; bottom: 2vh" wx:if="{{item.adoptChecked === 0 && item.checked === 1}}">
+            <view class="bar1"></view>
+            <view class="bar2"></view>
+            <view class="bar3"></view>
+          </view>
+        </view>
       </view>
-    </view>
+    </block>
   </block>
 </view>
-
-<view class="pos-fix" style="background-image: url(../../../assets/img/魔方.jpg); width: 200px; height: 200px; background-size: 200px 200px; background-position: right bottom; background-repeat: no-repeat;bottom: 0; right: 0; z-index: -1"></view>
+<!-- 
+<view class="pos-fix" style="background-image: url(../../../assets/img/魔方.jpg); width: 200px; height: 200px; background-size: 200px 200px; background-position: right bottom; background-repeat: no-repeat;bottom: 0; right: 0; z-index: -1"></view> -->

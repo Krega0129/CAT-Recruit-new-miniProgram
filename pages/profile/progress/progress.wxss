@@ -7,3 +7,38 @@
 .cu-item.cur::before {
   /* background: #74a594 !important; */
 }
+
+.bars {
+  transform: rotateZ(180deg);
+  width: 30rpx;
+}
+
+.bar1 {
+  width: 6rpx;
+  height: 40rpx;
+  background: white;
+  animation: barMove 1s ease-in-out infinite;
+}
+
+.bar2 {
+  width: 6rpx;
+  height: 40rpx;
+  background: white;
+  animation: barMove 1s ease-in-out .3s infinite;
+}
+
+.bar3 {
+  width: 6rpx;
+  height: 40rpx;
+  background: white;
+  animation: barMove 1s ease-in-out .6s infinite;
+}
+
+@keyframes barMove {
+  0%, 100% {
+    height: 40rpx
+  }
+  50% {
+    height: 20rpx
+  }
+}

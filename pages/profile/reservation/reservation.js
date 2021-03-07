@@ -40,12 +40,15 @@ Page({
     currentReservation: {},
     userInfo: app.globalData.userInfo
   },
-  onLoad: async function (options) {
+  onLoad: function (options) {
     this.setData({
       userInfo: app.globalData.userInfo
     })
 
-    await selectUserAppoint({
+    this._selectUserAppoint()
+  },
+  _selectUserAppoint() {
+    selectUserAppoint({
       userId: wx.getStorageSync('userId')
     }).then(res => {
       wx.hideLoading()
@@ -91,7 +94,6 @@ Page({
     })
   },
   appoint(e) {
-    console.log(e.currentTarget.dataset.item);
     const appoint = e.currentTarget.dataset.item
     appointTime({
       time: '2021-' + appoint.time + ':00',
@@ -101,10 +103,11 @@ Page({
       wx.hideLoading()
       if(res.data.code === H_config.STATUSCODE_appointTime_SUCCESS) {
         showToast('预约成功', 'success')
-        this.setData({
-          isReservated: true,
-          currentReservation: appoint
-        })
+        this._selectUserAppoint()
+        // this.setData({
+        //   isReservated: true,
+        //   currentReservation: appoint
+        // })
       }
     }).catch((err) => {
       console.log(err);

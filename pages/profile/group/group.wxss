@@ -5,59 +5,8 @@ page {
   --LTShadow: rgba(255, 255, 255, 1);
 }
 
-.btn {
-  width: 300rpx; 
-  height: 60rpx; 
-  line-height: 60rpx; 
-  top: 80rpx; 
-  left: 50%;
-  transform: translate(-50%, 0);
-  box-sizing: content-box; 
+.num {
+  box-sizing: border-box;
   background: #ecf0f3;
   box-shadow: 10px 10px 20px var(--RBShadow), -10px -10px 20px var(--LTShadow);
-}
-
-.weChat {
-  top: 0; 
-  left: 0;
-  height: 60rpx; 
-  width: 150rpx; 
-  z-index: 2;
-}
-
-.qq {
-  top: 0; 
-  right: 0;
-  height: 60rpx; 
-  width: 150rpx; 
-  z-index: 2;
-}
-
-.weChatBg {
-  height: 60rpx; 
-  width: 160rpx; 
-  box-shadow: 10px 10px 20px var(--RBShadow), -10px -10px 20px var(--LTShadow);
-  transition: .2s;
-}
-
-.box {
-  margin: 200rpx auto 50rpx auto;
-  padding: 25rpx;
-  width: 500rpx;
-  height: 500rpx;
-  box-shadow: 2px 6px 12px var(--RBShadow), -2px -2px 10px var(--LTShadow);
-}
-
-.qrcode {
-  width: 450rpx;
-  height: 450rpx;
-  transition: .2s;
-  transform-style: preserve-3d;
-  perspective: 1000px;
-  backface-visibility: hidden;
-}
-
-.qqQRcode {
-  transform: rotateY(180deg);
-  backface-visibility: hidden;
 }

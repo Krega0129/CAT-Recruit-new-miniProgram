@@ -1,21 +1,25 @@
 <!--pages/group/group.wxml-->
 <cu-custom bgColor="bg-olive" isBack="{{true}}">
-  <text slot="content">加入我们</text>
+  <text slot="content">招新公告</text>
 </cu-custom>
 
-<view class="pos-re">
-  <view class="btn round pos-ab text-center text-olive">
-    QQ二维码
-  </view>
+<view class="padding-lr-xl padding-top text-center margin-bottom-lg">
+  <view class="text-bold text-xxl margin-bottom">2021 招新流程</view>
+  <block wx:for="{{stage}}">
+    <view>
+      <view class="num padding-xs text-center">
+        <view class="cuIcon-{{icon[index]}} text-{{color[index]}} text-xxl margin-top-xs"></view>
+        <view class="text-left padding-tb-xs padding-lr-sm" style="text-indent: 2em">{{item}}</view>
+      </view>
+    </view>
+    <view class="flex justify-around">
+      <text class="cuIcon-titles text-olive" wx:if="{{index !== 5}}"></text>
+      <text class="cuIcon-titles text-olive" wx:if="{{index !== 5}}"></text>
+    </view>
+  </block>
 </view>
 
-<view class="box">
-  <view class="qrcode pos-re" style="transform: {{weChat?'rotateY(0)':'rotateY(180deg)'}};">
-    <view class="weChatQRcode pos-ab full">
-      <image src="../../../assets/img/CAT-logo.png" class="full"></image>
-    </view>
-    <view class="qqQRcode pos-ab full">
-      <image src="../../../assets/img/1.png" class="full"></image>
-    </view>
-  </view>
-</view>
+<!-- <view class="text-center margin-top-xl">
+  CAT工作室期待您的精彩表现！
+</view> -->
+
