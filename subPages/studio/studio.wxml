@@ -225,13 +225,11 @@
         <view class="progress-1-content-head-bottom"></view>
       </view>
       <view class="progress-5-content-body flex flex-direction align-center ">
-        <image src="/assets/img/1.jpg" style="width:80vw;margin-top:14px;"></image>
-        <image src="/assets/img/1.jpg" style="width:80vw;margin-top:14px;"></image>
-        <image src="/assets/img/1.jpg" style="width:80vw;margin-top:14px;"></image>
-        <image src="/assets/img/1.jpg" style="width:80vw;margin-top:14px;"></image>
-        <image src="/assets/img/1.jpg" style="width:80vw;margin-top:14px;"></image>
-        <image src="/assets/img/1.jpg" style="width:80vw;margin-top:14px;"></image>
-        <image src="/assets/img/1.jpg" style="width:80vw;margin-top:14px;"></image>
+        <image src="https://www.lizeqiang.top:8083/images/7a11fb3ad64b72603addc90b382405e.jpg" style="width:80vw;margin-top:14px;"></image>
+        <image src="https://www.lizeqiang.top:8083/images/9b8f9a9bdf30ecb721fd7401238634e.jpg" style="width:80vw;margin-top:14px;"></image>
+        <image src="https://www.lizeqiang.top:8083/images/3fd77231dc470484b1b776b3082c258.jpg" style="width:80vw;margin-top:14px;"></image>
+        <image src="https://www.lizeqiang.top:8083/images/016c4a27ab31f1cac6b0b2bbca8e8b5.jpg" style="width:80vw;margin-top:14px;"></image>
+        <image src="https://www.lizeqiang.top:8083/images/2e3c44349af018f829892357e1a7cb6.jpg" style="width:80vw;margin-top:14px;"></image>
       </view>
     </view>
     <view class="progress-5-bottom"></view>

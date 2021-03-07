@@ -1,5 +1,5 @@
 .bg-1 {
-  background: #b5b5b6;
+  background: #ffffff;
 }
 
 .bg-2 {
@@ -159,9 +159,9 @@ input {
   line-height: 80rpx;
   padding: 0 40rpx;
   width: 540rpx;
-  box-shadow: 0px 3px 8px #00000020, -2px 0 20px #ffffff;
+  box-shadow: 0px 3px 8px #00000030, -2px 0 20px #ffffff;
   border-radius: 60rpx;
-  background: #cfcfcf;
+  background: #9b59b690;
 }
 .form > .next{
   width: 100rpx;
