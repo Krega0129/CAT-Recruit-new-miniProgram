@@ -96,11 +96,19 @@ Page({
     const {stage} = this.data
     if(stage == 2){
       this.setData({
-        stage:1
+        stage:1,
+        nameTrue:1,
+        numberTrue:1,
+        classTrue:1,
+        name:'',
+        number:'',
+        clazz:''
       })
     }else if(stage == 3){
       this.setData({
-        stage:2
+        stage:2,
+        phoneTrue:1,
+        phone:''
       })
     }else if(stage == 4){
       this.setData({
