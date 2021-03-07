@@ -191,7 +191,7 @@ Page({
   },
   navigate(e) {
     let route = e.currentTarget.dataset.route
-    if(!wx.getStorageSync('userId') && route !== '/subPages/studio/studio') {
+    if(!wx.getStorageSync('userId') && (route === '/pages/profile/progress/progress' || route === '/pages/profile/reservation/reservation')) {
       login()
     } else if ((route === '/pages/profile/progress/progress' || route === '/pages/profile/reservation/reservation') && !this.data.isSignUp) {
       showToast('请先报名后再查看~')
@@ -224,9 +224,13 @@ Page({
     }
   },
   showModal(e) {
-    this.setData({
-      modalName: e.currentTarget.dataset.target
-    })
+    if(wx.getStorageSync('userId')) {
+      this.setData({
+        modalName: e.currentTarget.dataset.target
+      })
+    } else {
+      login()
+    }
   },
   hideModal(e) {
     this.setData({

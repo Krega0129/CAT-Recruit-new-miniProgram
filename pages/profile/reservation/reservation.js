@@ -108,6 +108,8 @@ Page({
         //   isReservated: true,
         //   currentReservation: appoint
         // })
+      } else {
+        showToast('预约失败')
       }
     }).catch((err) => {
       console.log(err);

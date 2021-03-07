@@ -1,7 +1,11 @@
 <!--pages/login/login.wxml-->
-<view class="padding-xl" style="margin-top: 300rpx">
+<cu-custom isBack="{{true}}">
+  <text slot="content">授权登录</text>
+</cu-custom>
+
+<view class="padding-xl" style="margin-top: 200rpx">
   <view class="flex justify-center">
-    <image style="width: 128rpx; height: 128rpx" src="../../assets/img/wx_logo.png"></image>
+    <image style="width: 800rpx; height: 360rpx" src="../../assets/img/cat.png"></image>
   </view>
-  <button open-type="getUserInfo" bindgetuserinfo="showLogin" class="text-center margin-top" type="primary" style="height: 96rpx; width: 474rpx; line-height: 66rpx">微信授权登录</button>
+  <button open-type="getUserInfo" bindgetuserinfo="showLogin" class="text-center margin-top num" type="primary" style="height: 96rpx; width: 474rpx; line-height: 66rpx">授权登录</button>
 </view>

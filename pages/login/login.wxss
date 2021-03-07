@@ -1,4 +1,12 @@
 /* pages/login/login.wxss */
 page {
-  background: #74a594;
+  background-color: #fff;
+  --RBShadow: rgba(207, 219, 230, .6);
+  --LTShadow: rgba(255, 255, 255, 1);
+}
+
+.num {
+  box-sizing: border-box;
+  background: #ecf0f3;
+  box-shadow: 10px 10px 20px var(--RBShadow), -10px -10px 20px var(--LTShadow);
 }

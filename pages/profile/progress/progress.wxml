@@ -3,21 +3,27 @@
   <text slot="content">进度</text>
 </cu-custom>
 
-<view class="bg bg-olive cu-timeline">
+<view class="bg cu-timeline">
   <block wx:for="{{progress}}" wx:key="scheduleId">
-    <block wx:if="{{!(item.adoptChecked === 0 && item.checked === 0)}}">
-      <view class="cu-time">{{item.currentTime ? item.currentTime : ''}}</view>
-      <view class="cu-item cur cuIcon-{{icon[item.adoptChecked]}} text-{{color[item.adoptChecked]}}">
-        <view class="content pos-re bg-{{item.adoptChecked === 1 ? color[1] : item.adoptChecked === 2 ? color[2] : (item.adoptChecked === 0 && item.checked === 1) ? color[3] : color[0]}} shadow-blur">
-          {{(item.adoptChecked === 1 ? '恭喜你通过了' : item.adoptChecked === 2 ? '很遗憾，你没有通过' : '') + item.recruitmentStage + ((item.adoptChecked === 0 && item.checked === 0) ? '还没开始' : (item.adoptChecked === 0 && item.checked === 1) ? '正在进行中' : '')}}！
-          <view class="bars pos-ab flex justify-between" style="right: 5vw; bottom: 2vh" wx:if="{{item.adoptChecked === 0 && item.checked === 1}}">
-            <view class="bar1"></view>
-            <view class="bar2"></view>
-            <view class="bar3"></view>
-          </view>
+    <view class="cu-time">{{item.currentTime ? item.currentTime : ''}}</view>
+    <view class="cu-item cur cuIcon-{{icon[item.adoptChecked]}} text-{{color[item.adoptChecked]}}">
+      <view class="content pos-re bg-{{item.adoptChecked === 1 ? color[1] : item.adoptChecked === 2 ? color[2] : (item.adoptChecked === 0 && item.checked === 1) ? color[3] : color[0]}} shadow-blur">
+        {{item.adoptChecked ? content[index][item.adoptChecked] : content[index][item.adoptChecked][item.checked]}}
+        <view class="bars pos-ab flex justify-between" style="right: 5vw; bottom: 2vh" wx:if="{{item.adoptChecked === 0 && item.checked === 1}}">
+          <view class="bar1"></view>
+          <view class="bar2"></view>
+          <view class="bar3"></view>
         </view>
       </view>
-    </block>
+      <!-- <view class="content pos-re bg-{{item.adoptChecked === 1 ? color[1] : item.adoptChecked === 2 ? color[2] : (item.adoptChecked === 0 && item.checked === 1) ? color[3] : color[0]}} shadow-blur">
+        {{(item.adoptChecked === 1 ? '恭喜你通过了' : item.adoptChecked === 2 ? '很遗憾，你没有通过' : '') + item.recruitmentStage + ((item.adoptChecked === 0 && item.checked === 0) ? '还没开始' : (item.adoptChecked === 0 && item.checked === 1) ? '正在进行中' : '')}}！
+        <view class="bars pos-ab flex justify-between" style="right: 5vw; bottom: 2vh" wx:if="{{item.adoptChecked === 0 && item.checked === 1}}">
+          <view class="bar1"></view>
+          <view class="bar2"></view>
+          <view class="bar3"></view>
+        </view>
+      </view> -->
+    </view>
   </block>
 </view>
 <!-- 
