@@ -26,6 +26,8 @@ Page({
             progress: res.data.data
           })
         }
+      }).catch((err) => {
+        console.log(err);
       })
     }
   }

@@ -9,7 +9,9 @@ import {
 import {
   getUserInfo,
   getSignUpInfo,
-  getAppointTime
+  getAppointTime,
+  getNotice,
+  checkNotice
 } from '../../../service/profile'
 import { H_config, BASE_URL } from '../../../service/config'
 
@@ -76,27 +78,6 @@ Page({
     })
   },
   onShow() {
-    // 判断是否报名
-    // if(wx.getStorageSync('userId') && !this.data.isSignUp) {
-    //   getSignUpInfo({
-    //     userId: wx.getStorageSync('userId')
-    //   }).then(res => {
-    //     if(res.data && res.data.code && res.data.code === H_config.STATUSCODE_getSignUpInfo_SUCCESS) {
-    //       wx.setStorageSync('direction', res.data.data.direction)
-    //       app.globalData.isSignUp = true
-    //       this.setData({
-    //         isSignUp: true
-    //       })
-    //     } else {
-    //       app.globalData.isSignUp = false
-    //       this.setData({
-    //         isSignUp: false
-    //       })
-    //     }
-    //     wx.hideLoading()
-    //   })
-    // }
-
     if(!app.globalData.isSignUp) {
       wx.getSetting({
         success: res => {
@@ -105,36 +86,41 @@ Page({
             wx.getUserInfo({
               success: res => {
                 app.globalData.userInfo = res.userInfo
-                // this.setData({
-                //   userInfo: res.userInfo
-                // })
               }
             })
           }
         }
       })
+    } else {
+      if(wx.getStorageSync('userId')) {
+        getNotice({
+          userId: wx.getStorageSync('userId')
+        }).then(res => {
+          wx.hideLoading()
+          if(res.data.code === 1200) {
+            this.setData({
+              notice: res.data.data
+            })
+          }
+        }).then(() => {
+          let num = 0
+          this.data.notice.forEach((data) => {
+            if(!data.stage) {
+              num++
+            }
+          })
+          this.setData({
+            unReadNoticeNum: num
+          })
+        }).catch((err) => {
+          console.log(err);
+        })
+      }
     }
     
     this.setData({
       isSignUp: app.globalData.isSignUp,
       userInfo: app.globalData.userInfo
-    })
-
-    new Promise((resolve, reject) => {
-      this.setData({
-        notice: wx.getStorageSync('notice')
-      })
-      resolve()
-    }).then(() => {
-      let num = 0
-      this.data.notice.forEach((data) => {
-        if(data.isRead === false) {
-          num++
-        }
-      })
-      this.setData({
-        unReadNoticeNum: num
-      })
     })
 
     const time = new Date()
@@ -217,9 +203,20 @@ Page({
     })
   },
   openDialog(e) {
-    let notice = this.data.notice.find(item => item.content === e.currentTarget.dataset.notice)
-    if(!notice.isRead) {
-      notice.isRead = true
+    let notice = this.data.notice.find(item => item.noticeContent === e.currentTarget.dataset.notice)
+    if(!notice.stage) {
+      checkNotice({
+        checked: 1,
+        noticeId: notice.noticeId
+      }).then(res => {
+        wx.hideLoading()
+        if(res.data.code !== 1200) {
+          showToast('操作失败')
+        }
+      }).catch((err) => {
+        console.log(err);
+      })
+      notice.stage = 1
       this.data.unReadNoticeNum--
     }
     this.setData({

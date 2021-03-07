@@ -103,6 +103,13 @@
           "id": -1,
           "name": "pages/profile/progress/progress",
           "pathName": "pages/profile/progress/progress",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/profile/group/group",
+          "pathName": "pages/profile/group/group",
           "scene": null
         }
       ]

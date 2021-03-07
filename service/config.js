@@ -1,4 +1,5 @@
-const BASE_URL = 'https://www.lizeqiang.top:8083'
+// const BASE_URL = 'https://www.lizeqiang.top:8083'
+const BASE_URL = 'https://192.168.1.108:8086'
 
 const H_config = {}
 
@@ -34,6 +35,10 @@ H_config.STATUSCODE_selectUserAppoint_SUCCESS = 1200
 // 取消预约
 H_config.API_cancelAppoint_URL = '/appoint/cancelAppoint'
 // H_config.STATUSCODE_getAppointTime_SUCCESS
+
+H_config.API_getNotice_URL = '/schedule/selectNotice'
+
+H_config.API_checkNotice_URL = '/schedule/updateNoticeStage'
 
 export {
   BASE_URL,

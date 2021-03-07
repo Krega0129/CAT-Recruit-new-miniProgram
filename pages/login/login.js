@@ -48,17 +48,31 @@ Page({
               wx.setStorageSync('direction', res.data.data.direction)
               app.globalData.isSignUp = true
               app.globalData.userInfo = res.data.data
+              wx.getUserInfo({
+                success: res => {
+                  app.globalData.userInfo.avatarUrl = res.userInfo.avatarUrl
+                  wx.showToast({
+                    title: '登录成功',
+                    duration: 1000
+                  })
+                  setTimeout(() => {
+                    wx.navigateBack()
+                  }, 100)
+                }
+              })
             } else {
               app.globalData.isSignUp = false
+              wx.showToast({
+                title: '登录成功',
+                duration: 1000
+              })
+              setTimeout(() => {
+                wx.navigateBack()
+              }, 100)
             }
             wx.hideLoading()
-            wx.showToast({
-              title: '登录成功',
-              duration: 1000
-            })
-            setTimeout(() => {
-              wx.navigateBack()
-            })
+          }).catch((err) => {
+            console.log(err);
           })
         } else {
           wx.showToast({

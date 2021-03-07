@@ -83,6 +83,8 @@ Page({
               success: (res) => {},
             })
 
+          }).catch((err) => {
+            console.log(err);
           })
       }else{
         this.phoneReg()

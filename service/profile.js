@@ -33,7 +33,11 @@ export function getUserInfo(data) {
 export function getSignUpInfo(data) {
   return request({
     url: H_config.API_getSignUpInfo_URL,
-    data: data
+    method: 'post',
+    data: data,
+    header: {
+      'content-type': 'application/x-www-form-urlencoded'
+    }
   })
 }
 
@@ -96,3 +100,29 @@ export function cancelAppoint(data) {
     }
   })
 }
+
+// 获取通知列表
+export function getNotice(data) {
+  return request({
+    url: H_config.API_getNotice_URL,
+    method: 'post',
+    data: data,
+    header: {
+      'content-type': 'application/x-www-form-urlencoded'
+    }
+  })
+}
+
+// 更改通知状态
+export function checkNotice(data) {
+  return request({
+    url: H_config.API_checkNotice_URL,
+    method: 'post',
+    data: data,
+    header: {
+      'content-type': 'application/x-www-form-urlencoded'
+    }
+  })
+}
+
+// 

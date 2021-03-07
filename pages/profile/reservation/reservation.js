@@ -64,6 +64,8 @@ Page({
       } else {
         showToast('加载失败')
       }
+    }).catch((err) => {
+      console.log(err);
     })
   },
   _getAppointTime() {
@@ -84,6 +86,8 @@ Page({
       } else {
         showToast('加载失败')
       }
+    }).catch((err) => {
+      console.log(err);
     })
   },
   appoint(e) {
@@ -102,6 +106,8 @@ Page({
           currentReservation: appoint
         })
       }
+    }).catch((err) => {
+      console.log(err);
     })
   },
   _cancelAppoint() {
@@ -127,6 +133,8 @@ Page({
             } else {
               showToast('取消失败')
             }
+          }).catch((err) => {
+            console.log(err);
           })
         }
       }

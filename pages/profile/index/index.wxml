@@ -24,7 +24,7 @@
   <view class="card flex bg-white padding-lr-lg padding-tb" bindtap="showModal" data-target="Modal" hover-class="card-active">
     <view class="flex-sub text-cut">
       <view class="title text-lg text-bold">通知</view>
-      <view class="margin-top text-cut">恭喜你，通过了我们的笔试，现在可以预约一轮面试啦，希望你接下来再接再厉，期待你的精彩表现！</view>
+      <view class="margin-top text-cut">{{notice[0].noticeContent ? notice[0].noticeContent : '目前还没有收到通知'}}</view>
     </view>
     <view class="icon text-right">
       <text class="cuIcon-notice pos-re">
@@ -55,14 +55,21 @@
     </view>
     <view class="solids-top">
       <view class="cu-list menu">
-        <view class="cu-item" wx:for="{{notice}}" wx:key="index" bindtap="openDialog" data-notice="{{item.content}}">
-          <view class="content text-cut">
-            <text class="cuIcon-{{item.isRead ? 'read' : 'mail'}} text-grey pos-re">
-              <text wx:if="{{!item.isRead}}" class="cu-tag badge dp-in-bk" style="height: 20rpx; width: 20rpx; right: 0; top: 0; line-height: 20rpx"></text>
-            </text>
-            <text class="text-grey">{{item.content}}</text>
+        <block wx:if="{{notice[0]}}">
+          <view class="cu-item" wx:for="{{notice}}" wx:key="index" bindtap="openDialog" data-notice="{{item.noticeContent}}">
+            <view class="content text-cut text-left">
+              <text class="cuIcon-{{item.stage ? 'read' : 'mail'}} text-grey pos-re">
+                <text wx:if="{{!item.stage}}" class="cu-tag badge dp-in-bk" style="height: 20rpx; width: 20rpx; right: 0; top: 0; line-height: 20rpx"></text>
+              </text>
+              <text class="text-grey">{{item.noticeContent}}</text>
+            </view>
+            <view class="text-{{item.stage ? 'green' : 'orange'}}">[{{item.stage ? '已读' : '未读'}}]</view>
           </view>
-          <view class="text-{{item.isRead ? 'green' : 'orange'}}">[{{item.isRead ? '已读' : '未读'}}]</view>
+        </block>
+        <view wx:else>
+          <view class="content text-cut padding">
+            <text class="text-grey">目前还没有收到通知哦，请耐心等待~</text>
+          </view>
         </view>
       </view>
     </view>
