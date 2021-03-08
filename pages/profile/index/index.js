@@ -275,6 +275,15 @@ Page({
     })
   },
   onPullDownRefresh() {
-    this.onShow()
+    this.onShow().then(() => {
+      wx.stopPullDownRefresh()
+    })
+  },
+  onShareAppMessage(options) {
+    return {
+      title: 'CAT Studio',
+      path: '/subPages/studio/studio',
+      imageUrl: '/assets/img/catlogo.jpg'
+    }
   }
 })

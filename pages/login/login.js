@@ -86,5 +86,12 @@ Page({
     } else {
       showToast('登录失败')
     }
+  },
+  onShareAppMessage(options) {
+    return {
+      title: 'CAT Studio',
+      path: '/subPages/studio/studio',
+      imageUrl: '/assets/img/catlogo.jpg'
+    }
   }
 })

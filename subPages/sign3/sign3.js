@@ -173,5 +173,12 @@ Page({
     wx.navigateTo({
       url: '/pages/profile/index/index',
     })
+  },
+  onShareAppMessage(options) {
+    return {
+      title: 'CAT Studio',
+      path: '/subPages/studio/studio',
+      imageUrl: '/assets/img/catlogo.jpg'
+    }
   }
 })
